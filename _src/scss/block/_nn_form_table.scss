@@ -1,0 +1,174 @@
+/**
+ * nn_form_table
+ */
+
+
+.nn_form_table_1 {
+	> .__Inner {
+		margin: -1em;
+
+		@include mq(MaxL) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+.nn_form_table_1__Row {
+	display: flex;
+	align-items: baseline;
+
+	@include mq(MaxM) {
+		display: block;
+	}
+
+	&:not(:first-child) {
+		@include mq(MaxM) {
+			margin-top: 2.3em;
+		}
+
+		.mw_wp_form_confirm & {
+			@include mq(MaxM) {
+				margin-top: 1.3em;
+			}
+		}
+	}
+
+	&.-alignTop {
+		align-items: flex-start;
+	}
+
+	&.-submitItems {
+		display: block;
+		margin-top: 1em;
+	}
+}
+
+.nn_form_table_1__SubmitItems {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: -1%;
+
+	> * {
+		margin: 1%;
+	}
+}
+
+.nn_form_table_1__Head,
+.nn_form_table_1__Data
+{
+	line-height: 1.4;
+	padding: 1em;
+
+	@include mq(MaxL) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@include mq(MaxM) {
+		padding: 0;
+	}
+}
+
+.nn_form_table_1__Head {
+	flex-shrink: 0;
+	width: 200px;
+
+	&.-required {
+		&::after {
+			content: "*";
+			color: map-get($color_template, 'red_1');
+
+			body[class*='confirm'] & {
+				display: none;
+			}
+		}
+	}
+
+	body:not([class*='confirm']) .nn_form_table_1__Row.-alignTop & {
+		padding-top: 2em;
+	}
+}
+
+.nn_form_table_1__Data {
+	width: 100%;
+
+	@include mq(MaxM) {
+		margin-top: .7em;
+	}
+
+	> * {
+		&:not(:first-child) {
+			margin-top: .5em;
+		}
+	}
+}
+
+.nn_form_table_1__Title {
+	font-weight: 700;
+}
+
+.nn_form_table_1__Grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nn_form_table_1__Group {
+	display: flex;
+
+	&.-size_full {
+		width: 100%;
+	}
+
+	&:not(:first-child) {
+		margin-top: .5em;
+	}
+
+	&:not(:last-child) {
+		margin-right: 2em;
+
+		@include mq {
+			margin-right: 1em;
+		}
+
+		.mw_wp_form_confirm & {
+			margin-right: .4em;
+		}
+	}
+
+	> * {
+		&:not(:last-child) {
+			margin-right: 1em;
+		}
+	}
+}
+
+.nn_form_table_1__Tiny {
+	padding-top: 1em;
+
+	.mw_wp_form_confirm & {
+		padding-top: 0;
+	}
+}
+
+.nn_form_table_1__Item {
+	&.-size_1 {
+		width: 160px;
+	}
+}
+
+.nn_form_table_1__Toggle {
+	&.-hiddenError {
+		body.form_error & {
+			display: none;
+		}
+	}
+
+	&.-hiddenConfirm {
+		body[class*='confirm'] & {
+			display: none;
+		}
+	}
+}

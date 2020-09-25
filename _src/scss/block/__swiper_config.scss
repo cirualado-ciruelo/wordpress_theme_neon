@@ -1,0 +1,139 @@
+/**
+ * swiper_config
+ */
+
+
+.swiper_config {
+	position: relative;
+
+	&.-sanitize {
+		.swiper-loader {
+			&,
+			&::before,
+			&::after
+			{
+				border-radius: 50%;
+				width: 2em;
+				height: 2em;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: 11;
+				animation-fill-mode: both;
+				animation: swiper_loader 1.8s infinite ease-in-out;
+			}
+
+			font-size: 10px;
+			color: $swiper_color_1;
+			transform: translate(-50%,-50%);
+			animation-delay: -.16s;
+
+			&::before,
+			&::after
+			{
+				content: '';
+				position: absolute;
+				top: 0;
+			}
+
+			&::before {
+				left: -3.5em;
+				animation-delay: -.32s;
+			}
+
+			&::after {
+				left: 3.5em;
+			}
+		}
+
+		ul.swiper-wrapper {
+			@include reset_list(l1, pl1, mt1, mb1);
+		}
+
+		// Timer
+		.swiper-timer {
+			width: 900px;
+			border: 1px solid $swiper_color_1;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+
+			@include mq {
+				width: 100%;
+			}
+		}
+
+		.swiper-progress {
+			width: 100%;
+			background-color: $swiper_color_1;
+			overflow: hidden;
+
+			.swiper-timer.on & {
+				background-color: #fff;
+			}
+		}
+
+		.swiper-progress-bar {
+			width: 100%;
+			height: 5px;
+			background-color: #fff;
+
+			.swiper-timer.on & {
+				background-color: $swiper_color_1;
+			}
+		}
+
+		// Setting
+		.swiper-button-prev,
+		.swiper-button-next
+		{
+			top: 0;
+			width: 50px;
+			height: 100%;
+			z-index: 10;
+			cursor: pointer;
+			background-image: $swiper_arw;
+			background-size: 30px;
+			background-position: center;
+			background-repeat: no-repeat;
+			margin-top: 0;
+			outline: none;
+
+			&::after {
+				display: none;
+			}
+		}
+
+		.swiper-button-prev {
+			left: 0;
+		}
+
+		.swiper-button-next {
+			right: 0;
+			transform: rotate(180deg);
+		}
+
+		.swiper-pagination-bullets {
+			bottom: 8px;
+			left: 0;
+			width: 100%;
+		}
+
+		.swiper-pagination-bullet {
+			width: 16px;
+			height: 16px;
+			background-color: #fefefe;
+			border: 1px solid $swiper_color_1;
+			margin: 8px;
+			opacity: 1;
+		}
+
+		.swiper-pagination-bullet-active {
+			background-color: $swiper_color_1;
+		}
+	}
+
+	&.-loaded .swiper-loader {
+		display: none;
+	}
+}

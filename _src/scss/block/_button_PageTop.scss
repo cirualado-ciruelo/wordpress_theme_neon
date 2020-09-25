@@ -1,0 +1,67 @@
+/**
+ * button_PageTop
+ */
+
+
+.button_PageTop {
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	bottom: $mq_gutter_val;
+	right: $mq_gutter_val;
+	z-index: 100;
+	background-color: $color_main_1;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 600ms,
+	            transform 600ms;
+
+	&:focus {
+		outline: none !important;
+	}
+
+	@include before(a1, '') {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: svg(_arw_left, #fefefe);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 10px 20px;
+		transform: rotate(90deg);
+	}
+
+	// @include after(a1, '') {
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	right: 0;
+	// 	background-color: rgba(#fefefe, .2);
+	// 	border-radius: 999px;
+	// 	margin: auto;
+	// 	transform: scale(0);
+	// 	opacity: 0;
+	// 	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+	// }
+
+	&:focus::after {
+		transform: scale(1.1);
+		opacity: 1;
+	}
+
+	@include mq {
+		bottom: 10px;
+		right: 10px;
+	}
+
+	&.-active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

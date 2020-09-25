@@ -1,0 +1,16 @@
+/**
+ * nn_link_plane
+ */
+
+
+.nn_link_plane_1 {
+	color: #fefefe;
+	font-weight: 700;
+	display: inline-block;
+	width: 100%;
+	max-width: 296px;
+	background-color: $color_main_1;
+	padding: 16px;
+	border-radius: 8px;
+	box-shadow: 0 3px 0 0 darken($color_main_1, 10%);
+}

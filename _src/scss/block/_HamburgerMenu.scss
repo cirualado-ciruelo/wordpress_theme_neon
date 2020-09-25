@@ -1,0 +1,38 @@
+/**
+ * HamburgerMenu
+ */
+
+
+.HamburgerMenu {
+	width: 100%;
+	height: calc( 100% - #{$site_header_height_sp} );
+	position: fixed;
+	top: $site_header_height_sp;
+	left: 0;
+	z-index: 200;
+	background-color: #fff;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch !important;
+	visibility: hidden;
+	opacity: 0;
+	transform: scale(1.05);
+	transition: opacity 400ms,
+	            visibility 400ms,
+	            transform 400ms;
+
+	body.logged-in & {
+		height: calc( 100% - #{$site_header_height_sp + $wp_loginbar_height} );
+		top: $site_header_height_sp + $wp_loginbar_height;
+
+		@media ( max-width: 782px ) {
+			height: calc( 100% - #{$site_header_height_sp + $wp_loginbar_height_sp} );
+			top: $site_header_height_sp + $wp_loginbar_height_sp;
+		}
+	}
+
+	body.-opened_hamburgerMenu & {
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1);
+	}
+}

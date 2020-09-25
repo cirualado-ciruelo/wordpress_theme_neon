@@ -1,0 +1,77 @@
+/**
+ * nn_form_parts_radio
+ */
+
+
+.nn_form_parts_radio_1 {
+	> .__Inner {
+		margin-top: -.7em;
+
+		.mw_wp_form_confirm & {
+			margin-top: 0;
+		}
+	}
+
+	.mw_wp_form_confirm & {
+		margin: 0;
+	}
+
+	label {
+		display: inline-block;
+		cursor: pointer;
+
+		> span {
+			display: inline-block;
+			position: relative;
+			padding-left: 25px;
+			margin-top: .7em;
+			margin-right: .7em;
+
+			&::before,
+			&::after
+			{
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				border-radius: 999px;
+			}
+
+			&::before {
+				width: 20px;
+				height: 20px;
+				background-color: #fefefe;
+				border: 2px solid rgba($color_base, .4);
+				margin-top: -11px;
+				transition: border 300ms ease-in-out;
+			}
+
+			&::after {
+				width: calc( 20px - 10px);
+				height: calc( 20px - 10px);
+				background-color: map-get($color_template, 'green_1');
+				margin: calc( 10px / 2 );
+				margin-top: -6px;
+				opacity: 0;
+				transition: opacity 300ms ease-in-out,
+				            transform 300ms ease-in-out;
+				transform: scale(0);
+			}
+		}
+	}
+}
+
+.nn_form_parts_radio_1__Input {
+	&:checked {
+		+ span {
+			&::before {
+				border-color:  map-get($color_template, 'green_1');
+			}
+
+			&::after {
+				opacity: 1 !important;
+				transform: scale(1) !important;
+			}
+		}
+	}
+}

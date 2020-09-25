@@ -1,0 +1,193 @@
+////
+/// スマホ・タブレットの時の左右の余白
+@mixin mq_gutter() {
+	padding-left: $mq_gutter_val;
+	padding-right: $mq_gutter_val;
+}
+
+////
+/// メディアクエリのテンプレート
+@mixin mq( $breakpoint: MaxS, $breakpoint2: null ) {
+	@each $name, $propaty in $break_points {
+		@if $breakpoint2 {
+			@media ( max-width: $breakpoint ) and ( min-width: $breakpoint2 ) {
+				@content;
+			}
+		} @else if $breakpoint == $name {
+			@if str-index( $breakpoint, 'Max' ) and str-index( $breakpoint, 'Min' ) {
+				@media ( min-width: map-get( $propaty, 'Min' ) ) and ( max-width: map-get( $propaty, 'Max' ) ) {
+					@content;
+				}
+			}
+
+			@if str-index( $breakpoint, 'Max' ) and not str-index( $breakpoint, 'Min' ) {
+				@media ( max-width: $propaty ) {
+					@content;
+				}
+			}
+
+			@if str-index( $breakpoint, 'Min' ) and not str-index( $breakpoint, 'Max' ) {
+				@media ( min-width: $propaty ) {
+					@content;
+				}
+			}
+		}
+	}
+}
+
+////
+/// `<li>`のデフォルトCSSのリセット
+////
+/// @param {String} $listStyle    [l1,'']
+/// @param {String} $paddingLeftl [pl, '']
+/// @param {String} $marginTop    [mt, '']
+/// @param {String} $marginBottom [mb, '']
+@mixin reset_list( $listStyle: null, $paddingLeftl: null, $marginTop: null, $marginBottom: null ) {
+	@if $listStyle == l1 {
+		list-style: none;
+	}
+
+	@if $paddingLeftl == pl1 {
+		padding-left: 0;
+	}
+
+	@if $marginTop == mt1 {
+		margin-top: 0;
+	}
+
+	@if $marginBottom == mb1 {
+		margin-bottom: 0;
+	}
+}
+
+////
+/// `::before`をabsoluteと併せて使用する
+////
+/// @param {String} $display - a1 or dn or ''
+/// @param {String} $content
+@mixin before( $display: null, $content: null ) {
+	&::before {
+		@if $display == dn {
+			display: none;
+		} @else {
+			content: "#{$content}";
+
+			@if $display == a1 {
+				position: absolute;
+			}
+
+			@content;
+		}
+	}
+}
+
+////
+/// `::after`をabsoluteと併せて使用する
+////
+/// @param {String} $display [a1, dn, '']
+/// @param {String} $content
+@mixin after( $display: null, $content: null ) {
+	&::after {
+		@if $display == dn {
+			display: none;
+		} @else {
+			content: "#{$content}";
+
+			@if $display == a1 {
+				position: absolute;
+			}
+
+			@content;
+		}
+	}
+}
+
+////
+/// `flexbox`を使用し、カラムの横幅を固定し、`space-between`おを使用せずに均等配置
+////
+/// @param {Strings} $width  カラムの横幅
+/// @param {Number}  $column カラム数
+/// @param {Strings} $offset 上下の余白を調整する
+@mixin flex_any_column( $width, $column, $offset: 0px, $detect: null ) {
+	width: $width;
+
+	&:not(:nth-child(#{$column}n+1)) {
+		@if $detect != 'light' {
+			html:not([data-browser="IE-Edge"]) & {
+				margin-left: calc( ( 100% - ( #{$width} * #{$column} ) ) / ( #{$column} - 1 ) );
+			}
+
+			html[data-browser="IE-Edge"] & {
+				margin-left: calc( ( ( 100% - 1px ) - ( #{$width} * #{$column} ) ) / ( #{$column} - 1 ) );
+			}
+		} @else {
+			margin-left: calc( ( 100% - ( #{$width} * #{$column} ) ) / ( #{$column} - 1 ) + #{$offset} );
+		}
+	}
+
+	&:not(:nth-child(-n+#{$column})) {
+		@if $detect != 'light' {
+			html:not([data-browser="IE-Edge"]) & {
+				margin-top: calc( ( 100% - ( #{$width} * #{$column} ) ) / ( #{$column} - 1 ) + #{$offset} );
+			}
+
+			html[data-browser="IE-Edge"] & {
+				margin-top: calc( ( ( 100% - 1px ) - ( #{$width} * #{$column} ) ) / ( #{$column} - 1 ) + #{$offset} );
+			}
+		} @else {
+			margin-top: calc( ( 100% - ( #{$width} * #{$column} ) ) / ( #{$column} - 1 ) + #{$offset} );
+		}
+	}
+}
+
+////
+/// `flexbox`を使用し、カラムの横幅を固定し、`space-between`おを使用せずに均等配置
+////
+/// @param {Strings} $colmn  カラムの横幅
+/// @param {Number}  $space  余白の大きさ
+/// @param {Strings} $offset 上下の余白を調整する
+@mixin flex_any_column_responsive( $colmn, $space, $offset: null ) {
+	width: calc( ( 100% / #{$colmn} ) - ( #{$space} * 2 ) );
+	margin: #{$offset} #{$space};
+}
+
+////
+/// WordPress GutenBurgのブロックマージンを`margin-top`のみに設定
+@mixin wp_gutenburg_base_space() {
+	&:not(:first-child) {
+		margin-top: $wp_gutenburg_base_space_size;
+	}
+}
+
+////
+/// IEにのみ適用するクエリ
+@mixin ie_hack() {
+	@media screen\0 {
+		@content;
+	}
+}
+
+////
+/// 長いテキストを任意の位置でカット
+@mixin line_clamp( $fontSize, $lineHeight, $lineNum ) {
+	font-size: $fontSize;
+	line-height: $lineHeight;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lineNum;
+	overflow: hidden;
+
+	@include ie_hack {
+		height: ($fontSize * $lineHeight * 2)+px;
+	}
+}
+
+////
+/// タッチデバイスのみにhoverスタイルを付与する
+@mixin hover() {
+	@at-root body:not(.-touch) &:hover,
+	&:focus
+	{
+		@content;
+	}
+}

@@ -1,0 +1,64 @@
+/*
+ * 管理画面CSS
+ */
+@charset "UTF-8";
+
+/*
+ * パーツ
+ */
+
+#wpwrap #wp-auth-check-wrap #wp-auth-check {
+	width: 100%;
+	max-width: 600px;
+}
+
+
+
+/*
+ * ブログ編集画面
+ */
+
+body.post-type-information #postimagediv {
+	padding-top: 10px;
+}
+
+body.post-type-information #postimagediv:before {
+	content: '推奨サイズ：1200x630以上';
+	font-size: 12px;
+	color: #777;
+	padding-left: 10px;
+}
+
+
+
+/*
+ * MW WP FORM
+ */
+
+body.post-type-mw-wp-form input[name*="mw-wp-form"][type="text"] {
+	width: 100%;
+}
+
+body.post-type-mw-wp-form #postdivrich #content {
+	height: 200px !important;
+}
+
+body.post-type-mw-wp-form #ed_toolbar,
+body.post-type-mw-wp-form #insert-media-button
+{
+	display: none !important;
+}
+
+body.post-type-mw-wp-form [name="mw-wp-form[admin_mail_from]"],
+body.post-type-mw-wp-form [name="mw-wp-form[mail_to]"],
+body.post-type-mw-wp-form [name="mw-wp-form[admin_mail_sender]"],
+body.post-type-mw-wp-form [name="mw-wp-form[mail_sender]"],
+body.post-type-mw-wp-form [name="mw-wp-form[mail_from]"],
+body.post-type-mw-wp-form [name="mw-wp-form[mail_return_path]"]
+{
+	background-color: rgba(255,147,180,0.3) !important;
+}
+
+.mw-wp-form-wp-list-table {
+	width: 100%;
+}

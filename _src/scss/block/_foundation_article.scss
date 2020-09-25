@@ -1,0 +1,13 @@
+/**
+ * foundation_article
+ */
+
+
+.foundation_article_1 {
+	background-color: #fefefe;
+	padding: 24px;
+
+	@include mq {
+		margin: -$mq_gutter_val;
+	}
+}

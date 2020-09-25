@@ -1,0 +1,334 @@
+/**
+ * hover
+ */
+
+
+.nn_posts_2__Item {
+	transition: background-color 200ms;
+
+	@include hover() {
+		background-color: #fafafa;
+	}
+}
+
+
+.button_PageTop {
+	@include hover() {
+		@extend %opacity_08;
+	}
+}
+
+
+.nn_article_navigation_1__Item > a.__Inner {
+	transition: opacity 200ms;
+
+	@include hover() {
+		@extend %opacity_08;
+	}
+}
+
+.nn_article_navigation_1__Item.-back > a.__Inner {
+	@include hover() {
+		@extend %text_decoration_none;
+	}
+}
+
+
+a.nn_link_left_1 {
+	transition: opacity 200ms;
+
+	&::before {
+		transition: transform 200ms;
+	}
+
+	@include hover() {
+		@extend %opacity_08;
+
+		&::before {
+			transform: translateX(-2px);
+		}
+	}
+}
+
+
+.wp_TheContent a {
+	transition: opacity 200ms;
+
+	@include hover() {
+		@extend %text_decoration_none;
+		@extend %opacity_08;
+	}
+}
+
+
+a.page-numbers {
+	@include hover() {
+		transition: opacity 200ms,
+		            background-color 200ms;
+
+		&:hover,
+		&:focus
+		{
+			@extend %opacity_08;
+
+			&.prev,
+			&.next
+			{
+				background-color: lighten($color_main_2, 40%);
+			}
+		}
+	}
+}
+
+
+.nn_button_toggle_1:not([disabled]) {
+	@include hover() {
+		border: 2px solid $color_main_1;
+		outline: none !important;
+		padding: 7px 15px;
+
+		&::before {
+			top: -1px;
+			right: -1px;
+		}
+	}
+}
+
+
+/*
+Form parts
+*/
+
+
+.nn_form_parts_select_1__Select {
+	+ .nn_form_parts_select_1__Appearance {
+		&::before {
+			transition: background-image 300ms ease-in-out,
+			            transform 300ms ease-in-out;
+		}
+
+		&::after {
+			transition: transform 300ms ease-in-out;
+		}
+	}
+
+	@include hover() {
+		color: $color_main_1;
+		background-color: map-get($color, 'gray_1');
+		border-color: $color_main_1;
+
+		+ .nn_form_parts_select_1__Appearance::before {
+			background-image: svg(_arw_left, $color_main_1);
+			transform: rotate(-90deg) translateX(-2px);
+		}
+
+		+ .nn_form_parts_select_1__Appearance::after {
+			transform: scaleX(1);
+		}
+	}
+}
+
+
+.nn_form_parts_text_2:not([disabled]) {
+	@include hover() {
+		box-shadow: inset 0 0 0 2px $color_main_1;
+		outline: none !important;
+	}
+}
+
+
+.nn_form_parts_check_1__Input:not([disabled]),
+.nn_form_parts_radio_1__Input:not([disabled])
+{
+	+ span {
+		transition: color 200ms;
+	}
+
+	@include hover() {
+		+ span {
+			color: map-get($color_template, 'green_1');
+		}
+	}
+}
+
+
+.nn_form_parts_check_1 label
+{
+	span {
+		&::after {
+			transition: opacity 200ms,
+			            transform 200ms;
+		}
+	}
+
+	@include hover() {
+		span {
+			&::after {
+				opacity: .5;
+				transform: scale(.2);
+			}
+		}
+	}
+}
+
+
+.nn_form_parts_radio_1 label
+{
+	span {
+		&::after {
+			transition: opacity 200ms,
+			            transform 200ms;
+		}
+	}
+
+	@include hover() {
+		span {
+			&::after {
+				opacity: .5;
+				transform: scale(.7);
+			}
+		}
+	}
+}
+
+
+.nn_form_parts_textarea_1:not([disabled]),
+.nn_form_parts_text_2:not([disabled]),
+.nn_form_parts_text_1:not([disabled])
+{
+	@include hover() {
+		box-shadow: inset 0 0 0 2px $color_main_1;
+		outline: none !important;
+	}
+}
+
+
+.nn_form_parts_submit_1:not([disabled]) {
+	@include hover() {
+		&.-back {
+			color: $color_base;
+			text-decoration: none;
+		}
+	}
+}
+
+
+/*
+Zoom image
+*/
+
+
+.nn_posts_1__Item > a.__Inner
+{
+	img {
+		transition: opacity 300ms ease-in-out,
+		            transform 250ms ease-in-out;
+	}
+
+	@include hover() {
+		img {
+			@extend %zoom_image;
+		}
+	}
+}
+
+
+/*
+Change Color
+*/
+
+
+.nn_wp_archiveList_1 a
+{
+	transition: color 200ms;
+
+	@include hover() {
+		color: $color_main_1;
+	}
+}
+
+
+/*
+Disable underline
+*/
+
+
+.term_2__Item > a.__Inner,
+a.Breadcrumb__Link
+{
+	@include hover() {
+		@extend %text_decoration_none;
+		@extend %opacity_08;
+	}
+}
+
+
+/*
+Enable underline
+*/
+
+
+.tdn
+{
+	@include hover() {
+		@extend %text_decoration_underline;
+		@extend %opacity_08;
+	}
+}
+
+
+/*
+opacity.8
+*/
+
+
+.term_1__Item > a.__Inner,
+.nn_form_parts_submit_2:not([disabled]),
+.nn_form_parts_submit_1:not([disabled]),
+.nn_sns_link_1__Item > a.__Inner,
+a.post-page-numbers,
+.Header__Logo > a.__Inner
+{
+	transition: opacity 200ms;
+
+	@include hover() {
+		@extend %opacity_08;
+	}
+}
+
+
+/*
+opacity.6
+*/
+
+
+.nn_banner_1__Item > a.__Inner
+{
+	transition: opacity 200ms;
+
+	@include hover() {
+		@extend %opacity_06;
+	}
+}
+
+
+%zoom_image {
+	opacity: .8;
+	transform: scale(1.05);
+}
+
+%text_decoration_underline {
+	text-decoration: underline;
+}
+
+%text_decoration_none {
+	text-decoration: none;
+}
+
+%opacity_08 {
+	opacity: .8;
+}
+
+%opacity_06 {
+	opacity: .6;
+}

@@ -1,0 +1,31 @@
+/**
+ * nn_wp_articlePager
+ *
+ * / wp_link_pages()で出力されるページャー
+ */
+
+
+.nn_wp_articlePager_1 {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+
+	.post-page-numbers {
+		color: #fefefe;
+		width: 45px;
+		height: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $color_main_1;
+		border: 1px solid $color_main_1;
+		margin: 5px;
+
+		&.current {
+			font-weight: 700;
+			color: $color_main_1;
+			background-color: #fefefe;
+			border-color: #fefefe;
+		}
+	}
+}

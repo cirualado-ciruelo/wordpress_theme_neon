@@ -1,0 +1,32 @@
+/**
+ * HasSideContainer
+ */
+
+.HasSideContainer {
+	display: flex;
+	justify-content: space-between;
+
+	@include mq(MaxL) {
+		display: block;
+	}
+}
+
+.HasSideContainer__Main {
+	flex-shrink: 0;
+	width: 704px;
+
+	@include mq(MaxL) {
+		width: 100%;
+	}
+}
+
+.HasSideContainer__Side {
+	width: 100%;
+	margin-left: 48px;
+
+	@include mq(MaxL) {
+		margin-top: 64px;
+		margin-left: 0;
+		overflow: hidden;
+	}
+}

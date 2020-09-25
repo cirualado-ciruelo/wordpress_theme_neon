@@ -1,0 +1,25 @@
+/**
+ * nn_link_left
+ */
+
+
+.nn_link_left_1 {
+	font-weight: 700;
+	letter-spacing: .1em;
+	display: inline-block;
+	width: 100%;
+	max-width: 296px;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 2em;
+		height: 1em;
+		vertical-align: -.1em;
+		background-image: svg(_arw_left, $color_main_1);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: .4em;
+		margin-left: -.5em;
+	}
+}

@@ -1,0 +1,41 @@
+/**
+ * Footer
+ */
+
+
+.Footer {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	border-top: 2px solid map-get($color, 'gray_1');
+}
+
+.Footer__Ladder {
+	> * {
+		&:not(:first-child) {
+			margin-top: 40px;
+		}
+	}
+}
+
+.Footer__group_1 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.Footer__3 {
+	margin: -30px;
+}
+
+.Footer__Item {
+	margin: 30px;
+}
+
+.Footer__Logo {
+	> .__Src {
+		width: 120px;
+	}
+}
+
+.Footer__Copyright {
+	display: block;
+}

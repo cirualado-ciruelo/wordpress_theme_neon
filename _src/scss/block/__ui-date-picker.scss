@@ -1,0 +1,126 @@
+/**
+ * Library CSS: ui-datepicker
+ *
+ * / Customize ui-datepicker.
+ *
+ * @package datepicker.min.js
+ */
+
+
+.pt-mw-wp-form {
+	.ui-datepicker,
+	.ui-state-default,
+	.ui-widget-content .ui-state-default,
+	.ui-widget-header .ui-state-default,
+	.ui-datepicker .ui-widget-header
+	{
+		background-image: none;
+	}
+
+	.ui-datepicker {
+		font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+		width: 100%;
+		max-width: 300px;
+		z-index: 10 !important;
+		background-color: lighten($color_main_1, 30%);
+		padding: 16px;
+		border: none;
+		border-radius: 0;
+		box-shadow: 4px 4px 2px 1px rgba($color_main_1, .2);
+
+		.ui-widget-header {
+			font-size: 14px;
+			display: flex;
+			background-color: transparent;
+			border: none;
+			border-radius: 0;
+			margin-bottom: 16px;
+		}
+
+		.ui-datepicker-prev,
+		.ui-datepicker-next
+		{
+			width: 2em;
+			height: 2em;
+			background-color: #f4f4f4;
+			position: relative;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+
+		.ui-datepicker-prev {
+			order: 1;
+		}
+
+		.ui-datepicker-next {
+			order: 3;
+		}
+
+		.ui-datepicker-title {
+			order: 2;
+			width: calc( 100% - 4em );
+			height: 2em;
+			margin: 0;
+		}
+
+		select.ui-datepicker-month,
+		select.ui-datepicker-year
+		{
+			text-align: center;
+			width: 36%;
+			height: 100%;
+			padding-left: 16px;
+			padding-right: 16px;
+			background-color: #f4f4f4;
+			border: none;
+			appearance: none;
+			border-radius: 0;
+			margin: 0;
+			cursor: pointer;
+
+			&::-ms-expand {
+				display: none;
+			}
+		}
+
+		select.ui-datepicker-year {
+			margin-right: 2%;
+		}
+
+		select.ui-datepicker-month {
+			margin-left: 4%;
+		}
+
+		thead {
+			border-bottom: 10px solid lighten($color_main_1, 30%);
+		}
+
+		th {
+			font-size: 14px;
+			background-color: #f4f4f4;
+			border: 2px solid lighten($color_main_1, 30%);
+		}
+
+		td {
+			font-size: 14px;
+
+			span,
+			a
+			{
+				background-color: #fff;
+				padding: 5px;
+				border: none;
+
+				&:focus {
+					background-color: rgba($color_main_1, .1);
+				}
+			}
+		}
+
+		.ui-state-highlight {
+			font-weight: bold;
+			color: $color_main_1;
+		}
+	}
+}

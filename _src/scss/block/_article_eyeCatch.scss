@@ -1,0 +1,11 @@
+/**
+ * article_eyeCatch
+ */
+
+
+.article_eyeCatch_1 {
+	@include mq(MaxL) {
+		margin-left: -$mq_gutter_val;
+		margin-right: -$mq_gutter_val;
+	}
+}

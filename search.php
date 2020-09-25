@@ -86,12 +86,9 @@ else :
 				endif;
 
 				?>
-			</div>
-			<!-- /._Ladder -->
-		</div>
-		<!-- /._Container -->
-	</section>
-	<!-- /.ContainerTree__Branch -->
+			</div><!-- /._Ladder -->
+		</div><!-- /._Container -->
+	</section><!-- /.ContainerTree__Branch -->
 	<?php
 
 	get_footer();

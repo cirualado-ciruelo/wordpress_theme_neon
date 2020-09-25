@@ -53,7 +53,7 @@ function neon_link( $dir, $type = null ) {
 		// taxonomy
 		'blog_c_voice' => array(
 			'label' => "お客様の声",
-			'url'   => get_term_link( 'voice', 'category' ),
+			'url'   => '',
 		),
 
 		// _blank
@@ -318,13 +318,13 @@ function neon_add_class_body( $classes, $class = '' ) {
 			$classes[] = 'anc-' . get_page( end( get_ancestors( $post->ID, 'page' ) ), 'page' )->post_name;
 		}
 
-		$system_page_id = get_post_meta( $post->ID, 'systemPageId', true );
+		$system_page_id = get_field( 'acf_page_system_id', $post->ID );
 
 		if ( $system_page_id ) {
 			$classes[] = 'systemid-' . $system_page_id;
 		}
 
-		$anc_system_page_id = get_post_meta( get_page( end( get_ancestors( $post->ID, 'page' ) ), 'page' )->ID, 'systemPageId', true );
+		$anc_system_page_id = get_field( 'acf_page_system_id', get_page( end( get_ancestors( $post->ID, 'page' ) ), 'page' )->ID );
 
 		if ( $anc_system_page_id ) {
 			$classes[] = 'anc-systemid-' . $anc_system_page_id;

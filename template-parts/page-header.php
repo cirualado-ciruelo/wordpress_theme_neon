@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-if ( ! is_front_page() ) : 
+if ( ! is_front_page() ) :
 	$page_header_image_src = get_template_directory() . '/assets/images/pageHeader_';
 	$page_header_title_ja  = get_the_title();
 	$page_header_title_en  = $post->post_name;
@@ -76,17 +76,13 @@ if ( ! is_front_page() ) :
 						<small class="PageHeader__SubTitle">
 							<?php echo ucwords( $page_header_title_en ); ?>
 						</small>
-					</div>
-					<!-- /.PageHeader__Title -->
-				</div>
-				<!-- /.PageHeader__group_1 -->
+					</div><!-- /.PageHeader__Title -->
+				</div><!-- /.PageHeader__group_1 -->
 
 				<div class="PageHeader__group_2">
 					<div class="PageHeader__Image" <?php echo $page_header_style; ?>></div>
-				</div>
-				<!-- /.PageHeader__group_2 -->
-			</div>
-			<!-- /.PageHeader -->
+				</div><!-- /.PageHeader__group_2 -->
+			</div><!-- /.PageHeader -->
 		</div><!-- /._Container -->
 	</header>
 	<?php

@@ -73,8 +73,7 @@ get_header();
 								get_template_part( 'template-parts/posts', 'post' );
 
 								?>
-							</div>
-							<!-- /.nn_posts_1 -->
+							</div><!-- /.nn_posts_1 -->
 							<?php
 
 						// isset($_GET['s']) && empty($_GET['s'])
@@ -106,8 +105,7 @@ get_header();
 
 					?>
 				</article>
-			</main>
-			<!-- /.HasSideContainer__Main -->
+			</main><!-- /.HasSideContainer__Main -->
 
 			<aside class="HasSideContainer__Side">
 				<?php
@@ -119,12 +117,9 @@ get_header();
 
 				?>
 			</aside>
-		</div>
-		<!-- /.HasSideContainer -->
-	</div>
-	<!-- /._Container -->
-</div>
-<!-- /.ContainerTree__Branch -->
+		</div><!-- /.HasSideContainer -->
+	</div><!-- /._Container -->
+</div><!-- /.ContainerTree__Branch -->
 <?php
 
 get_footer();

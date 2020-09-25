@@ -164,12 +164,6 @@ function neon_acf_set_field_group_site_settings() {
 				'tab'
 			),
 			neon_acf_fieldset(
-				'field_tab_site_meta',
-				'サイト共通メタ',
-				'acf_tab_site_meta',
-				'tab'
-			),
-			neon_acf_fieldset(
 				'field_site_meta_keywords',
 				'キーワード',
 				'acf_site_meta_keywords',

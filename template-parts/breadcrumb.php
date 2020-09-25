@@ -17,8 +17,8 @@ $bread_crumb_micro_data = array(
 	'list' => 'BreadcrumbList',
 	'item' => 'ListItem',
 );
-$bread_crumb_micro_data_item = ' itemprop="itemListElement" 
-itemscope 
+$bread_crumb_micro_data_item = ' itemprop="itemListElement"
+itemscope
 itemtype="' . $bread_crumb_micro_data['url'] . $bread_crumb_micro_data['item'] . '"';
 // $bread_crumb_micro_data_item
 
@@ -40,7 +40,7 @@ if ( is_tax() || is_category() || is_tag() ) {
 	$bread_crumb_last_item_name = get_queried_object()->name;
 	$bread_crumb_next_item      = $bread_crumb_post_item. '<li' . $bread_crumb_class . $bread_crumb_micro_data_item . '>
 		<span itemprop="name">' . $bread_crumb_last_item_name . '</span>
-		<meta itemprop="position" 
+		<meta itemprop="position"
 		      content="' . $bread_crumb_itemprop_position . '">
 	</li>';
 } elseif ( is_archive() || is_home() ) {
@@ -68,7 +68,7 @@ if ( is_tax() || is_category() || is_tag() ) {
 
 	$bread_crumb_next_item .= '<li' . $bread_crumb_class . $bread_crumb_micro_data_item . '>
 		<span itemprop="name">' . $bread_crumb_last_item_name . '</span>
-		<meta itemprop="position" 
+		<meta itemprop="position"
 		      content="' . $bread_crumb_itemprop_position . '">
 	</li>';
 } elseif ( is_page() ) {
@@ -80,7 +80,7 @@ if ( is_tax() || is_category() || is_tag() ) {
 			<li'
 			. $bread_crumb_class
 			. $bread_crumb_micro_data_item . '>
-				<a ' . $bread_crumb_body_class . 'href="' . esc_url( get_page_link( $post_parent_id ) ) . '" 
+				<a ' . $bread_crumb_body_class . 'href="' . esc_url( get_page_link( $post_parent_id ) ) . '"
 				itemprop="item">
 					<span itemprop="name">'
 						. get_page( $post_parent_id )->post_title
@@ -94,7 +94,7 @@ if ( is_tax() || is_category() || is_tag() ) {
 	$bread_crumb_last_item_name  = get_the_title();
 	$bread_crumb_next_item      .= '<li' . $bread_crumb_class . $bread_crumb_micro_data_item . '>
 		<span itemprop="name">' . $bread_crumb_last_item_name . '</span>
-		<meta itemprop="position" 
+		<meta itemprop="position"
 		      content="' . $bread_crumb_itemprop_position++ . '">
 	</li>';
 } elseif ( is_single() ) {
@@ -102,7 +102,7 @@ if ( is_tax() || is_category() || is_tag() ) {
 
 	$bread_crumb_next_item = '<li' . $bread_crumb_class . $bread_crumb_micro_data_item . '>
 		<span itemprop="name">' . get_the_title() . '</span>
-		<meta itemprop="position" 
+		<meta itemprop="position"
 		      content="' . $bread_crumb_itemprop_position . '">
 	</li>';
 } elseif ( is_404() ) {
@@ -111,7 +111,7 @@ if ( is_tax() || is_category() || is_tag() ) {
 	$bread_crumb_last_item_name = '404 Not found.';
 	$bread_crumb_next_item     .= '<li' . $bread_crumb_class . $bread_crumb_micro_data_item . '>
 		<span itemprop="name">' . $bread_crumb_last_item_name . '</span>
-		<meta itemprop="position" 
+		<meta itemprop="position"
 		      content="' . $bread_crumb_itemprop_position . '">
 	</li>';
 }
@@ -129,7 +129,7 @@ if ( $_GET['s'] ) {
 
 	$bread_crumb_next_item = '<li' . $bread_crumb_class . $bread_crumb_micro_data_item . '>
 		<span itemprop="name">' . $bread_crumb_last_item_name . '</span>
-		<meta itemprop="position" 
+		<meta itemprop="position"
 		      content="' . $bread_crumb_itemprop_position . '">
 	</li>';
 }
@@ -137,14 +137,14 @@ if ( $_GET['s'] ) {
 ?>
 <div class="Breadcrumb">
 	<div class="_Container -larger_03">
-		<ol class="Breadcrumb__List" 
-		    itemscope 
+		<ol class="Breadcrumb__List"
+		    itemscope
 		    itemtype="<?php echo $bread_crumb_micro_data['url'] . $bread_crumb_micro_data['list']; ?>">
-			<li <?php echo $bread_crumb_class; ?> 
+			<li <?php echo $bread_crumb_class; ?>
 			    itemprop="itemListElement"
 			    itemscope
 			    itemtype="<?php echo $bread_crumb_micro_data['url'] . $bread_crumb_micro_data['item']; ?>">
-				<a <?php echo $bread_crumb_body_class; ?> 
+				<a <?php echo $bread_crumb_body_class; ?>
 				   href="<?php echo esc_url( home_url() ); ?>"
 				   itemprop="item">
 					<span itemprop="name">HOME</span>
@@ -154,7 +154,5 @@ if ( $_GET['s'] ) {
 			</li>
 			<?php echo $bread_crumb_next_item; ?>
 		</ol>
-	</div>
-	<!-- /._Container -->
-</div>
-<!-- /.Breadcrumb -->
+	</div><!-- /._Container -->
+</div><!-- /.Breadcrumb -->

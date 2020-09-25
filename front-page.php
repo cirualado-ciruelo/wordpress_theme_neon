@@ -20,12 +20,9 @@ get_header();
 			<img class="__Src _Lite_inline"
 			     src="<?php echo THEME_IMG_URL; ?>/hero_lite.jpg"
 			     alt="">
-		</div>
-		<!-- /.nn_hero_visual_1__Image -->
-	</div>
-	<!-- /.nn_hero_visual_1 -->
-</section>
-<!-- /.ContainerTree__Branch -->
+		</div><!-- /.nn_hero_visual_1__Image -->
+	</div><!-- /.nn_hero_visual_1 -->
+</section><!-- /.ContainerTree__Branch -->
 
 <section class="ContainerTree__Branch">
 	<div class="_Container">
@@ -43,12 +40,9 @@ get_header();
 				<a class="nn_link_right_1"
 				   href="<?php echo neon_link( 'about' ); ?>">詳しく見る</a>
 			</p>
-		</div>
-		<!-- /._Ladder -->
-	</div>
-	<!-- /._Container -->
-</section>
-<!-- /.ContainerTree__Branch -->
+		</div><!-- /._Ladder -->
+	</div><!-- /._Container -->
+</section><!-- /.ContainerTree__Branch -->
 
 <section class="ContainerTree__Branch">
 	<div class="_Container">
@@ -74,8 +68,7 @@ get_header();
 				<p class="_Ladder__Link _Tac">
 					<a class="nn_link_right_1"
 					   href="<?php echo neon_link( 'blog' ); ?>">詳しく見る</a>
-				</p>
-				<!-- /._Ladder__Link -->
+				</p><!-- /._Ladder__Link -->
 				<?php
 
 			else :
@@ -89,12 +82,9 @@ get_header();
 			wp_reset_query();
 
 			?>
-		</div>
-		<!-- /._Ladder -->
-	</div>
-	<!-- /._Container -->
-</section>
-<!-- /.ContainerTree__Branch -->
+		</div><!-- /._Ladder -->
+	</div><!-- /._Container -->
+</section><!-- /.ContainerTree__Branch -->
 
 <section class="ContainerTree__Branch _bg_color_gray_1">
 	<div class="_Container">
@@ -113,12 +103,9 @@ get_header();
 					<?php echo neon_link( 'contact', 'label' ); ?>
 				</a>
 			</p>
-		</div>
-		<!-- /._Ladder -->
-	</div>
-	<!-- /._Container -->
-</section>
-<!-- /.ContainerTree__Branch -->
+		</div><!-- /._Ladder -->
+	</div><!-- /._Container -->
+</section><!-- /.ContainerTree__Branch -->
 <?php
 
 get_footer();

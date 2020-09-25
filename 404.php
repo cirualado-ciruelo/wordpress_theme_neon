@@ -16,10 +16,8 @@ get_header();
 			お探しのページは一時的にアクセスできない状況にあるか、<br class="_Full_inline">
 			移動もしくは削除された可能性があります。
 		</p>
-	</div>
-	<!-- /._Container -->
-</div>
-<!-- /.ContainerTree__Branch -->
+	</div><!-- /._Container -->
+</div><!-- /.ContainerTree__Branch -->
 
 <div class="ContainerTree__Branch">
 	<div class="_Container">
@@ -46,12 +44,9 @@ get_header();
 				<a class="nn_link_left_1"
 				   href="<?php echo esc_url( home_url() ); ?>">トップページへ戻る</a>
 			</p>
-		</div>
-		<!-- /._Ladder -->
-	</div>
-	<!-- /._Container -->
-</div>
-<!-- /.ContainerTree__Branch -->
+		</div><!-- /._Ladder -->
+	</div><!-- /._Container -->
+</div><!-- /.ContainerTree__Branch -->
 <?php
 
 get_footer();

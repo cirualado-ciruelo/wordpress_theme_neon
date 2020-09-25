@@ -127,8 +127,7 @@ if ( 'footer-sub' === $place ) :
 				   href="<?php echo neon_link( 'privacy' ); ?>"><?php  echo neon_link( 'privacy', 'label' ); ?></a>
 			</li>
 		</ul>
-	</div>
-	<!-- /.nn_list_link_1 -->
+	</div><!-- /.nn_list_link_1 -->
 	<?php
 
 endif;

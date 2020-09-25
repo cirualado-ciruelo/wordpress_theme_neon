@@ -17,7 +17,7 @@
  */
 
 ?><!DOCTYPE html>
-<html data-ua="<?php echo neon_is_ua(); ?>" 
+<html data-ua="<?php echo neon_is_ua(); ?>"
       data-browser="<?php echo neon_is_browser(); ?>"
       <?php language_attributes(); ?> >
 <head prefix="og: http://ogp.me/ns#
@@ -31,7 +31,11 @@
 	 *
 	 * !!! ログインしている時・検索インデックスを回避している時は計測されません。
 	 */
-	if ( neon_is_public() && get_field( 'acf_site_tag_head', 'option' ) && ! is_user_logged_in() ) {
+	if ( neon_is_public()
+		 && ( function_exists( 'acf_add_options_page' )
+		      && get_field( 'acf_site_tag_head', 'option' ) )
+		 && ! is_user_logged_in()
+	) {
 		the_field( 'acf_site_tag_head', 'option' );
 	}
 
@@ -63,7 +67,7 @@ if ( neon_is_custom_meta() ) {
 
 	?>
 	<!-- <style>
-		
+
 	</style> -->
 	<?php
 
@@ -103,7 +107,7 @@ wp_body_open();
 <?php
 
 // HTML圧縮Start
-ob_start();
+// ob_start();
 
 ?>
 <header class="Header">
@@ -120,8 +124,7 @@ ob_start();
 							     alt="<?php echo get_bloginfo( 'name' ); ?>">
 						</a>
 					</<?php echo $header_logo_tag; ?>>
-				</div>
-				<!-- /.Header__group_2 -->
+				</div><!-- /.Header__group_2 -->
 				<div class="Header__group_3">
 					<nav class="Globalnav _MinL_block">
 						<?php
@@ -133,19 +136,14 @@ echo neon_get_data_from_system_page_id( 'p1', 'link' );
 						?>
 					</nav>
 					<button class="button_HamburgerMenu _MaxL_block"
-					        type="button" 
+					        type="button"
 					        data-click="hamburgerMenu"
 					        title="全てのメニュー"></button>
-				</div>
-				<!-- /.Header__group_3 -->
-			</div>
-			<!-- /.Header__group_1 -->
-		</div>
-		<!-- /._Container -->
-	</div>
-	<!-- /.Header__Body -->
-</header>
-<!-- /.Header -->
+				</div><!-- /.Header__group_3 -->
+			</div><!-- /.Header__group_1 -->
+		</div><!-- /._Container -->
+	</div><!-- /.Header__Body -->
+</header><!-- /.Header -->
 
 <div class="PrimaryContainer">
 	<div class="HamburgerMenu"
@@ -160,8 +158,7 @@ echo neon_get_data_from_system_page_id( 'p1', 'link' );
 		get_template_part( 'template-parts/sns', 'link' );
 
 		?>
-	</div>
-	<!-- /.HamburgerMenu -->
+	</div><!-- /.HamburgerMenu -->
 
 	<div class="PrimaryContainer__Body">
 		<?php

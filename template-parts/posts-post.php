@@ -24,12 +24,12 @@
 						<header class="nn_posts_1__Head">
 							<div class="nn_posts_1__Thumbnail _MaskFit">
 								<img class="__Src _MinL_inline _MaskFit__Src _Ofi"
-								     src="<?php echo neon_get_img_data( 'thumb', 'template_thumb_full' ); ?>" 
+								     src="<?php echo neon_get_img_data( 'thumb', 'template_thumb_full' ); ?>"
 								     srcset="<?php echo neon_get_img_data( 'thumb', 'template_thumb_full@2x' ); ?> 2x,
 								             <?php echo neon_get_img_data( 'thumb', 'template_thumb_full' ); ?> 1x"
 								     alt="<?php echo neon_get_img_data( 'thumb', 'alt' ); ?>">
 								<img class="__Src _MaxL_inline _MaskFit__Src _Ofi"
-								     src="<?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?>" 
+								     src="<?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?>"
 								     srcset="<?php echo neon_get_img_data( 'thumb', 'template_lite_S@2x' ); ?> 2x,
 								             <?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?> 1x"
 								     alt="<?php echo neon_get_img_data( 'thumb', 'alt' ); ?>">
@@ -61,10 +61,8 @@
 							);
 
 							?>
-						</div>
-						<!-- /.nn_posts_1__Torso -->
-					</div>
-					<!-- /.nn_posts_1__Ladder -->
+						</div><!-- /.nn_posts_1__Torso -->
+					</div><!-- /.nn_posts_1__Ladder -->
 				</a>
 			</article>
 			<?php
@@ -73,7 +71,5 @@
 
 		?>
 		<div class="nn_posts_1__Item -empty"></div>
-	</div>
-	<!-- /.nn_posts_1__List -->
-</div>
-<!-- /.nn_posts_1 -->
+	</div><!-- /.nn_posts_1__List -->
+</div><!-- /.nn_posts_1 -->

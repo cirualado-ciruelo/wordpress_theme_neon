@@ -18,7 +18,6 @@ body.wp-admin #wp-admin-bar-comments,
 body.wp-admin .updated,
 body.wp-admin #wpfooter #footer-left,
 body.wp-admin #wpfooter #footer-upgrade,
-body.wp-admin #wpfooter,
 body.wp-admin #ac-table-actions
 {
 	display: none !important;

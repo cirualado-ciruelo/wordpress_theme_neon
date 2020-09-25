@@ -39,5 +39,4 @@
 	endwhile;
 
 	?>
-</div>
-<!-- /.nn_posts_2 -->
+</div><!-- /.nn_posts_2 -->

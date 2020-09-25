@@ -56,7 +56,5 @@ $is_pager_debug = 1;
 		endif ;
 
 		?>
-	</div>
-	<!-- /.nn_wp_archivePager_1 -->
-</div>
-<!-- /._Ladder__Pager -->
+	</div><!-- /.nn_wp_archivePager_1 -->
+</div><!-- /._Ladder__Pager -->

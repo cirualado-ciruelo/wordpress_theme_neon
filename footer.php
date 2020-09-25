@@ -24,7 +24,7 @@
 								<ul class="nn_banner_1__List">
 									<li class="nn_banner_1__Item">
 										<a class="__Inner _Block"
-										   target="_blank" 
+										   target="_blank"
 										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
 											<img class="__Src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_1.jpg"
@@ -33,7 +33,7 @@
 									</li>
 									<li class="nn_banner_1__Item">
 										<a class="__Inner _Block"
-										   target="_blank" 
+										   target="_blank"
 										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
 											<img class="__Src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_2.jpg"
@@ -42,45 +42,38 @@
 									</li>
 									<li class="nn_banner_1__Item">
 										<a class="__Inner _Block"
-										   target="_blank" 
+										   target="_blank"
 										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
-											<img class="__Src" 
+											<img class="__Src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_3.jpg"
 											     alt="">
 										</a>
 									</li>
 								</ul>
-							</div>
-							<!-- /.nn_banner_1 -->
-						</div>
-						<!-- /._Container -->
-					</section>
-					<!-- /.ContainerTree__Branch -->
+							</div><!-- /.nn_banner_1 -->
+						</div><!-- /._Container -->
+					</section><!-- /.ContainerTree__Branch -->
 					<?php
 
 					if ( ! neon_is_sidebar() ) :
 
 						?>
-				</article>
-				<!-- /.ContainerTree -->
-			</main>
-			<!-- /.PrimaryContainer__Torso -->
+				</article><!-- /.ContainerTree -->
+			</main><!-- /.PrimaryContainer__Torso -->
 			<?php
 
 					// ! neon_is_sidebar()
 					endif;
 
 	?>
-	</div>
-	<!-- /.PrimaryContainer__Body -->
+	</div><!-- /.PrimaryContainer__Body -->
 
 	<button class="button_PageTop"
 	        type="button"
-	        title="ページのトップへ戻る" 
+	        title="ページのトップへ戻る"
 	        data-click="scrolToPageTop"
 	        data-scroll="anyTimingToggle"></button>
-</div>
-<!-- /.PrimaryContainer -->
+</div><!-- /.PrimaryContainer -->
 
 <footer class="Footer">
 	<div class="Footer__Ladder _Container">
@@ -91,8 +84,7 @@
 				neon_the_menu( 'footer' );
 
 				?>
-			</div>
-			<!-- /.Footer__group_2 -->
+			</div><!-- /.Footer__group_2 -->
 			<div class="Footer__group_3">
 				<div class="_Ladder">
 					<p class="Footer__Logo">
@@ -106,12 +98,9 @@
 							TEL|0763-62-4139
 						</p>
 					</address>
-				</div>
-				<!-- /._Ladder -->
-			</div>
-			<!-- /.Footer__group_3 -->
-		</div>
-		<!-- /.Footer__group_1 -->
+				</div><!-- /._Ladder -->
+			</div><!-- /.Footer__group_3 -->
+		</div><!-- /.Footer__group_1 -->
 		<div class="Footer__group_4">
 			<div class="_Ladder">
 				<?php
@@ -124,20 +113,16 @@
 				neon_the_menu( 'footer-sub' );
 
 				?>
-			</div>
-			<!-- /._Ladder -->
-		</div>
-		<!-- /.Footer__group_4 -->
+			</div><!-- /._Ladder -->
+		</div><!-- /.Footer__group_4 -->
 
 		<small class="Footer__Copyright">&copy; <?php echo date( 'Y' ); ?> SHIROBAKO 製作委員</small>
-	</div>
-	<!-- /._Container -->
-</footer>
-<!-- /.Footer -->
+	</div><!-- /._Container -->
+</footer><!-- /.Footer -->
 <?php
 
 // HTML圧縮End（出力）
-neon_the_ob_replace();
+// neon_the_ob_replace();
 
 ?>
 <script>
@@ -151,7 +136,6 @@ neon_the_ob_replace();
 	};
 </script>
 <?php wp_footer(); ?>
-</div>
-<!-- /._Body -->
+</div><!-- /._Body -->
 </body>
 </html>

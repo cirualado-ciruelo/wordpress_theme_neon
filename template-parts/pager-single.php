@@ -55,8 +55,7 @@ if ( get_previous_post() || get_next_post() ) :
 			?>
 			</li>
 		</ul>
-	</div>
-	<!-- /.nn_article_navigation_1 -->
+	</div><!-- /.nn_article_navigation_1 -->
 	<?php
 
 endif ;

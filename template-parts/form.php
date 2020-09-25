@@ -56,10 +56,8 @@
 									<a class="nn_link_left_1"
 									   href="<?php echo esc_url( home_url() ); ?>">TOPにもどる</a>
 								</p>
-							</div>
-							<!-- /._Ladder -->
-						</div>
-						<!-- /.form_ThanksContent -->
+							</div><!-- /._Ladder -->
+						</div><!-- /.form_ThanksContent -->
 						<?php
 
 					endif;
@@ -95,10 +93,6 @@
 				ob_start();
 
 				?>
-			</div>
-			<!-- /._Ladder -->
-		</div><!-- form_base_t_01 -->
-	</div>
-	<!-- /._Container -->
-</div>
-<!-- /.ContainerTree__Branch -->
+			</div><!-- /._Ladder --><!-- form_base_t_01 -->
+	</div><!-- /._Container -->
+</div><!-- /.ContainerTree__Branch -->

@@ -69,11 +69,11 @@ function neon_show_custom_post_num_dashboard( $items ) {
 		$post_count = wp_count_posts( $post_type );
 
 		if (
-			 $post_count && 
-			 $post_count->publish && 
+			 $post_count &&
+			 $post_count->publish &&
 			 ! (
-			 	 'post' === $post_type || 
-			 	 'attachment' === $post_type 
+			 	 'post' === $post_type ||
+			 	 'attachment' === $post_type
 			 )
 		) {
 			$post_count = number_format_i18n( $post_count->publish ) . ' 件';
@@ -153,7 +153,7 @@ function neon_customize_login_page() {
 ?>
 	<style>
 		.login {
-			background: url(<?php echo THEME_URL; ?>/_inc/assets/images/bg_login.jpg) no-repeat center;
+			background: url(<?php echo THEME_URL; ?>/inc/assets/images/bg_login.jpg) no-repeat center;
 			background-size: cover;
 		}
 		.login #login {
@@ -165,7 +165,7 @@ function neon_customize_login_page() {
 		.login #login h1 a {
 			width: 300px;
 			height: 84px;
-			background: url(<?php echo THEME_URL; ?>/_inc/assets/images/logo_login.svg) no-repeat center;
+			background: url(<?php echo THEME_URL; ?>/inc/assets/images/logo_login.svg) no-repeat center;
 			background-size: contain;
 		}
 		#login_error,
@@ -310,11 +310,11 @@ add_action( 'admin_menu', 'neon_remove_sidebar_menu' );
  * @since 1.0.0
  */
 function neon_admin_enqueues() {
-	wp_enqueue_script( 'admin_js', THEME_URL . '/_inc/assets/js/admin.js', '', '', true );
-	wp_enqueue_style( 'admin_css', THEME_URL . '/_inc/assets/css/admin.css' );
+	wp_enqueue_script( 'admin_js', THEME_URL . '/inc/assets/js/admin.js', '', '', true );
+	wp_enqueue_style( 'admin_css', THEME_URL . '/inc/assets/css/admin.css' );
 
 	if ( 1 !== wp_get_current_user()->ID ) {
-		wp_enqueue_style( 'not_admin_css', THEME_URL . '/_inc/assets/css/not_admin.css' );
+		wp_enqueue_style( 'not_admin_css', THEME_URL . '/inc/assets/css/not_admin.css' );
 	}
 }
 
@@ -518,7 +518,7 @@ function neon_get_data_from_system_page_id( $id = null, $type = null ) {
 		)
 	);
 	$post_data      = get_posts( $args );
-	$system_page_id = get_post_meta( $post->ID, 'systemPageId', true );
+	$system_page_id = get_field( 'acf_page_system_id', $post->ID );
 
 	if ( 'get' === $type ) {
 		return $system_page_id . wp_reset_postdata();
@@ -534,7 +534,7 @@ function neon_get_data_from_system_page_id( $id = null, $type = null ) {
 		return $system_page_id . wp_reset_postdata();
 	} elseif ( 'link' === $type ) {
 		foreach ( $post_data as $post ) {
-			$system_page_id = get_post_meta( $post->ID, 'systemPageId', true );
+			$system_page_id = get_field( 'acf_page_system_id', $post->ID );
 
 			if ( $system_page_id && $id === $system_page_id ) {
 				return get_the_permalink( $post ) . wp_reset_postdata();
@@ -543,7 +543,7 @@ function neon_get_data_from_system_page_id( $id = null, $type = null ) {
 		}
 	} else {
 		foreach ( $post_data as $post ) {
-			$system_page_id = get_post_meta( $post->ID, 'systemPageId', true );
+			$system_page_id = get_field( 'acf_page_system_id', $post->ID );
 
 			if ( $system_page_id && $id === $system_page_id ) {
 				return $post . wp_reset_postdata();
@@ -981,8 +981,6 @@ function neon_the_media_link( $fileName = null ) {
 			$link = $post->guid;
 
 			break;
-		} else {
-			return 'javascript:void(0);';
 		}
 	}
 

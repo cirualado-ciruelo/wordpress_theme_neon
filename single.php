@@ -31,15 +31,15 @@ while ( have_posts() ) :
 
 										?>
 										<div class="article_eyeCatch_1">
-											<img class="__Src _Full_inline" 
-											     src="<?php echo neon_get_img_data( 'thumb', 'major_full_content' ); ?>" 
+											<img class="__Src _Full_inline"
+											     src="<?php echo neon_get_img_data( 'thumb', 'major_full_content' ); ?>"
 											     srcset="<?php echo neon_get_img_data( 'thumb', 'major_full_content@2x' ); ?> 2x,
-											             <?php echo neon_get_img_data( 'thumb', 'major_full_content' ); ?> 1x" 
+											             <?php echo neon_get_img_data( 'thumb', 'major_full_content' ); ?> 1x"
 											     alt="<?php echo neon_get_img_data( 'thumb', 'alt' ); ?>">
-											<img class="__Src _Lite_inline" 
-											     src="<?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?>" 
+											<img class="__Src _Lite_inline"
+											     src="<?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?>"
 											     srcset="<?php echo neon_get_img_data( 'thumb', 'template_lite_S@2x' ); ?> 2x,
-											             <?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?> 1x" 
+											             <?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?> 1x"
 											     alt="<?php echo neon_get_img_data( 'thumb', 'alt' ); ?>">
 										</div>
 										<?php
@@ -68,10 +68,8 @@ while ( have_posts() ) :
 
 										?>
 									</div>
-								</div>
-								<!-- /._Ladder -->
-							</div>
-							<!-- /.article_head_1 -->
+								</div><!-- /._Ladder -->
+							</div><!-- /.article_head_1 -->
 						</header>
 						<section class="article_container_1__Torso _Ladder -size_L">
 							<article class="foundation_article_1">
@@ -105,10 +103,8 @@ while ( have_posts() ) :
 
 							?>
 						</footer>
-					</div>
-					<!-- /.article_container_1 -->
-				</main>
-				<!-- /.HasSideContainer__Main -->
+					</div><!-- /.article_container_1 -->
+				</main><!-- /.HasSideContainer__Main -->
 
 				<aside class="HasSideContainer__Side">
 					<?php
@@ -121,12 +117,9 @@ while ( have_posts() ) :
 					?>
 				</aside>
 
-			</div>
-			<!-- /.HasSideContainer -->
-		</div>
-		<!-- /._Container -->
-	</div>
-	<!-- /.ContainerTree__Branch -->
+			</div><!-- /.HasSideContainer -->
+		</div><!-- /._Container -->
+	</div><!-- /.ContainerTree__Branch -->
 	<?php
 
 endwhile;

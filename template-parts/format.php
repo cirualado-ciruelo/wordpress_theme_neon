@@ -9,7 +9,7 @@
  */
 
 ?>
-<!-- 
+<!--
 デバイスごとの出し分け
  -->
 <p class="_Full_block">Full</p>
@@ -24,12 +24,10 @@
 <p class="_Max576_block">Max 575px スマホサイズ</p>
 <p class="_Max1239Min770_block">Max 1239px Min 770px</p>
 
-<!-- 
+<!--
 ツリーコンテナ
  -->
 <section class="basis_Tree__Branch">
 	<div class="basis_Container">
-	</div>
-	<!-- /.basis_Container -->
-</section>
-<!-- /.basis_Tree__Branch -->
+	</div><!-- /.basis_Container -->
+</section><!-- /.basis_Tree__Branch -->

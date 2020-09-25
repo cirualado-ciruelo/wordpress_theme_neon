@@ -9,7 +9,7 @@
  */
 
 // 固定ページのファイルパス取得
-$page_file = locate_template( '_pages/' . neon_get_data_from_system_page_id( '', 'get' ) . '.php' );
+$page_file = locate_template( 'pages/' . neon_get_data_from_system_page_id( '', 'get' ) . '.php' );
 
 // 使用するライブラリのリスト
 $use_library = array();
@@ -51,17 +51,15 @@ else :
 
 	// ソースファイルがある場合
 	if ( $page_file ) :
-		get_template_part( '_pages/' . neon_get_data_from_system_page_id( '', 'get' ) );
+		get_template_part( 'pages/' . neon_get_data_from_system_page_id( '', 'get' ) );
 	else :
 
 		?>
 		<div class="ContainerTree__Branch">
 			<div class="_Container">
 				<p class="_nn_text_1 _Tac">このページは現在準備中です。</p>
-			</div>
-			<!-- /._Container -->
-		</div>
-		<!-- /.ContainerTree__Branch -->
+			</div><!-- /._Container -->
+		</div><!-- /.ContainerTree__Branch -->
 		<?php
 
 	// if $page_file

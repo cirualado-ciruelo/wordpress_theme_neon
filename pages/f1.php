@@ -39,8 +39,7 @@
 						[mwform_radio class="nn_form_parts_radio_1__Input _Sanitize_HiddenInput"
 						              name="性別"
 						              children="男性,女性"]
-					</div>
-					<!-- /.__Inner -->
+					</div><!-- /.__Inner -->
 				</div>
 			</dd>
 		</div>
@@ -58,10 +57,8 @@
 							[mwform_text class="nn_form_parts_text_1 _Sanitize_Text"
 							             id="yubin"
 							             name="郵便番号"]
-						</div>
-						<!-- /.nn_form_table_1__Item -->
-					</div>
-					<!-- ./nn_form_table_1__Group -->
+						</div><!-- /.nn_form_table_1__Item -->
+					</div><!-- ./nn_form_table_1__Group -->
 					<div class="nn_form_table_1__Group">
 						<label class="nn_form_table_1__Tiny"
 						       for="area">都道府県</label>
@@ -74,8 +71,7 @@
 								<div class="nn_form_parts_select_1__Appearance"></div>
 							</div>
 						</div>
-					</div>
-					<!-- ./nn_form_table_1__Group -->
+					</div><!-- ./nn_form_table_1__Group -->
 					<div class="nn_form_table_1__Group">
 						<label class="nn_form_table_1__Tiny"
 						       for="city">市区町村</label>
@@ -88,10 +84,8 @@
 								<div class="nn_form_parts_select_1__Appearance"></div>
 							</div>
 						</div>
-					</div>
-					<!-- ./nn_form_table_1__Group -->
-				</div>
-				<!-- ./nn_form_table_1__Grid -->
+					</div><!-- ./nn_form_table_1__Group -->
+				</div><!-- ./nn_form_table_1__Grid -->
 			</dd>
 		</div>
 		<div class="nn_form_table_1__Row">
@@ -132,8 +126,7 @@
 						        data-click="resetVal"
 						        data-reset-target="予定"></button>
 					</div>
-				</div>
-				<!-- ./_Relative -->
+				</div><!-- ./_Relative -->
 			</dd>
 		</div>
 		<div class="nn_form_table_1__Row">
@@ -147,8 +140,7 @@
 						                 name="お問い合わせ種別"
 						                 children="種別1,種別2,種別3,種別4,種別5,種別6,種別7,種別8,種別9,種別10,種別11"
 						                 separator=","]
-					</div>
-					<!-- /.__Inner -->
+					</div><!-- /.__Inner -->
 				</div>
 			</dd>
 		</div>
@@ -174,8 +166,7 @@
 						                 name="利用規約への同意"
 						                 children="同意します"
 						                 separator=","]
-					</div>
-					<!-- /.__Inner -->
+					</div><!-- /.__Inner -->
 				</div>
 				<div class="nn_form_table_1__Toggle -hiddenConfirm">
 					<p class="_nn_text_anno_1">
@@ -196,6 +187,5 @@
 				                value="send"]送信する[/mwform_bsubmit]
 			</div>
 		</div>
-	</dl>
-	<!-- /.__Inner -->
+	</dl><!-- /.__Inner -->
 </div>

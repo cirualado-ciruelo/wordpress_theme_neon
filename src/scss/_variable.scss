@@ -10,14 +10,6 @@ $color_template: (
 	'red_1'    : #f2506e,
 	'green_1'  : #009a9a,
 );
-$color_custom: (
-	'1' : #dba800,
-	'2' : #d24488,
-	'3' : #7c608c,
-	'4' : #2985be,
-	'5' : #a3bc5c,
-	'6' : #d74f13,
-);
 $color_base   : map-get($color, 'base');
 $color_main_1 : map-get($color, 'blue_1');
 $color_main_2 : map-get($color, 'blue_2');
@@ -45,9 +37,9 @@ $font_serif_1    : $font_web_1,
 
 // Height
 $site_header_height    : 72px;
-$site_header_height_sp : 56px;
+$site_header_height_lite : 56px;
 $wp_loginbar_height    : 32px;
-$wp_loginbar_height_sp : 45px;
+$wp_loginbar_height_lite : 45px;
 
 // Width
 $container_width: (
@@ -63,7 +55,7 @@ $wp_gutenburg_base_space_size : 2em;
 $mq_gutter_val                : 16px;
 
 // String
-$detect_primary_size : 'MaxS';
+$detect_primary_size : 'maxS';
 
 // Other
 $break_points: (

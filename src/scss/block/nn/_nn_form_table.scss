@@ -7,7 +7,7 @@
 	> .__inner {
 		margin: -1em;
 
-		@include mq(MaxL) {
+		@include mq(maxL) {
 			margin-left: 0;
 			margin-right: 0;
 		}
@@ -18,17 +18,17 @@
 	display: flex;
 	align-items: baseline;
 
-	@include mq(MaxM) {
+	@include mq(maxM) {
 		display: block;
 	}
 
 	&:not(:first-child) {
-		@include mq(MaxM) {
+		@include mq(maxM) {
 			margin-top: 2.3em;
 		}
 
 		.mw_wp_form_confirm & {
-			@include mq(MaxM) {
+			@include mq(maxM) {
 				margin-top: 1.3em;
 			}
 		}
@@ -62,12 +62,12 @@
 	line-height: 1.4;
 	padding: 1em;
 
-	@include mq(MaxL) {
+	@include mq(maxL) {
 		padding-left: 0;
 		padding-right: 0;
 	}
 
-	@include mq(MaxM) {
+	@include mq(maxM) {
 		padding: 0;
 	}
 }
@@ -95,7 +95,7 @@
 .nn_form_table_1__data {
 	width: 100%;
 
-	@include mq(MaxM) {
+	@include mq(maxM) {
 		margin-top: .7em;
 	}
 

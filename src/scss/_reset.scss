@@ -7,7 +7,6 @@
 *::before,
 *::after
 {
-	letter-spacing: .05em;
 	vertical-align: baseline;
 	padding: 0;
 	border: 0;
@@ -31,25 +30,11 @@
 	background-color: $color_main_1;
 }
 
-#wpadminbar *::before,
-#wpadminbar *::after
-{
-	line-height: 1;
-}
-
 html {
 	font-family: sans-serif;
 	font-size: 16px;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba($color_main_1, .3);
-
-	// &[data-site-set-fontsize="S"] {
-	// 	font-size: 58%;
-	// }
-
-	// &[data-site-set-fontsize="L"] {
-	// 	font-size: 72%;
-	// }
 }
 
 article,
@@ -73,6 +58,7 @@ body {
 	font-family: $font_base, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
+	letter-spacing: .05em;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: left;
@@ -84,8 +70,8 @@ body {
 		font-family: $font_ie_sans, sans-serif;
 	}
 
-	@include mq(MaxL) {
-		margin-top: $site_header_height_sp;
+	@include mq(maxL) {
+		margin-top: $site_header_height_lite;
 	}
 
 	&.-liquid {
@@ -108,10 +94,6 @@ body {
 		background-color: #3bffff;
 		margin: auto;
 	}
-}
-
-[tabindex="-1"]:focus:not(:focus-visible) {
-	outline: 0 !important;
 }
 
 hr {
@@ -144,17 +126,6 @@ h6
 p {
 	line-height: 2;
 	letter-spacing: .075em;
-}
-
-abbr[title],
-abbr[data-original-title]
-{
-	text-decoration: underline;
-	text-decoration: underline dotted;
-	cursor: help;
-	border-bottom: 0;
-	-webkit-text-decoration-skip-ink: none;
-	text-decoration-skip-ink: none;
 }
 
 address {
@@ -198,8 +169,7 @@ b,
 strong,
 a
 {
-	font-family: inherit;
-	font-size: inherit;
+	font: inherit;
 	line-height: inherit;
 	letter-spacing: inherit;
 }
@@ -238,30 +208,13 @@ textarea
 {
 	&:focus {
 		outline-color: $color_main_1;
+		border-width: 0 !important;
 	}
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
-}
-
-pre,
-code,
-kbd,
-samp
-{
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-	font-size: 1em;
-}
-
-pre {
-	overflow: auto;
-}
-
-source {
-	width: 100%;
-	display: block;
 }
 
 img,
@@ -317,8 +270,7 @@ select,
 optgroup,
 textarea
 {
-	font-family: inherit;
-	font-size: inherit;
+	font: inherit;
 	line-height: inherit;
 	letter-spacing: inherit;
 }

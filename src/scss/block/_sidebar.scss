@@ -13,7 +13,7 @@
 	margin-right: -15px;
 	overflow-y: scroll;
 
-	@include mq(MaxL) {
+	@include mq(maxL) {
 		display: flex;
 		flex-wrap: wrap;
 		position: static;
@@ -47,7 +47,7 @@
 }
 
 .sidebar_1__item {
-	@include mq(MaxL) {
+	@include mq(maxL) {
 		width: calc( 50% - 48px );
 	}
 
@@ -64,7 +64,7 @@
 	}
 
 	&:nth-child(1n) {
-		@include mq(MaxL) {
+		@include mq(maxL) {
 			margin: 24px;
 		}
 

@@ -543,7 +543,7 @@ Form sanitize
 	appearance: none;
 
 	&::-webkit-input-placeholder {
-		@include mq(MaxM) {
+		@include mq(maxM) {
 			padding-top: .15em;
 		}
 	}

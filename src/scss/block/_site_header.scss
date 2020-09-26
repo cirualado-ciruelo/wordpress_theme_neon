@@ -15,15 +15,15 @@
 	align-items: center;
 	justify-content: center;
 
-	@include mq(MaxL) {
-		height: $site_header_height_sp;
+	@include mq(maxL) {
+		height: $site_header_height_lite;
 	}
 
 	body.logged-in & {
 		top: $wp_loginbar_height;
 
 		@media ( max-width: 782px ) {
-			top: $wp_loginbar_height_sp;
+			top: $wp_loginbar_height_lite;
 		}
 	}
 }
@@ -41,7 +41,7 @@
 .site_header__srcLogo {
 	width: 120px;
 
-	@include mq(MaxL) {
+	@include mq(maxL) {
 		width: 80px;
 	}
 }

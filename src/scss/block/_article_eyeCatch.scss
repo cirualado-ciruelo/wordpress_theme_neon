@@ -4,7 +4,7 @@
 
 
 .article_eyeCatch_1 {
-	@include mq(MaxL) {
+	@include mq(maxL) {
 		margin-left: -$mq_gutter_val;
 		margin-right: -$mq_gutter_val;
 	}

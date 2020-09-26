@@ -94,8 +94,8 @@ Form parts
 
 .nn_form_parts_text_2:not([disabled]) {
 	@include hover() {
-		box-shadow: inset 0 0 0 2px $color_main_1;
-		outline: none !important;
+		outline-color: $color_main_1;
+		border-width: 0 !important;
 	}
 }
 
@@ -160,7 +160,8 @@ Form parts
 .nn_form_parts_text_1:not([disabled])
 {
 	@include hover() {
-		box-shadow: inset 0 0 0 2px $color_main_1;
+		box-shadow: inset 0 0 0 3px $color_main_1;
+		border-width: 0 !important;
 		outline: none !important;
 	}
 }

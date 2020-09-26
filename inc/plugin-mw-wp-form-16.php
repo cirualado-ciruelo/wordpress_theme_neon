@@ -15,6 +15,7 @@
  *
  * @package WordPress
  * @since 1.0.0
+ * @subpackage Mw WP Form
  */
 
 /**
@@ -36,11 +37,11 @@ function neon_mw_admin_mail_raw_setting_16( $mailRaw, $values, $data ) {
 
 	// 宛先
 	if ( ! $mailRaw->to ) {
-		$mailRaw->to = 'devdavdidida@rakuten.jp';
+		$mailRaw->to = neon_config( 'info_mail_address' );
 	}
 
 	if ( $is_mw_debug_mode ) {
-		$mailRaw->to = 'tesu.matsumura.work@gmail.com';
+		$mailRaw->to = neon_config( 'debug_mail_address' );
 	}
 
 	// // cc
@@ -55,12 +56,12 @@ function neon_mw_admin_mail_raw_setting_16( $mailRaw, $values, $data ) {
 
 	// 送信元
 	if ( ! $mailRaw->from ) {
-		$mailRaw->from = 'devdavdidida@rakuten.jp';
+		$mailRaw->from = neon_config( 'info_mail_address' );
 	}
 
 	// Return-Path
 	if ( ! $mailRaw->return_path ) {
-		$mailRaw->return_path = 'devdavdidida@rakuten.jp';
+		$mailRaw->return_path = neon_config( 'info_mail_address' );
 	}
 
 	// 送信者
@@ -125,7 +126,7 @@ function neon_mw_auto_mail_raw_setting_16( $mailRaw, $values, $data ) {
 
 	// 送信元
 	if ( ! $mailRaw->from ) {
-		$mailRaw->from = 'devdavdidida@rakuten.jp';
+		$mailRaw->from = neon_config( 'info_mail_address' );
 	}
 
 	// 送信者

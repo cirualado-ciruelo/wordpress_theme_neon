@@ -79,6 +79,21 @@ function neon_link( $dir, $type = null ) {
 }
 
 /**
+ * 各種設定
+ *
+ * @param string $key
+ * @since 1.0.0
+ */
+function neon_config( $key ) {
+	$args = array(
+		'info_mail_address' => "info@example.com",
+		'debug_mail_address' => "cirualado.ciruelo@gmail.com",
+	);
+
+	return $args[ $key ];
+}
+
+/**
  * wp_head()で読み込まれるファイルをカスタマイズ
  *
  * @since 1.0.0
@@ -251,7 +266,7 @@ function neon_deregister_styles() {
 add_action( 'wp_print_styles', 'neon_deregister_styles' );
 
 /**
- *
+ * 特別なクラスの出し分け
  *
  * @since 1.0.0
  */

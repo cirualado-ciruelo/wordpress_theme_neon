@@ -12,6 +12,7 @@
  *
  * @package WordPress
  * @since 1.0.0
+ * @subpackage Mw WP Form
  */
 
 $is_mw_debug_mode = true;
@@ -75,9 +76,14 @@ function neon_mw_default_settings( $value, $key ) {
 		return '/form/thanks/';
 	}
 
-	// 自動返信メール
+	// [管理者] Reply-to（メールアドレス）
 	if ( 'admin_mail_reply_to' === $key ) {
 		return '{メールアドレス}';
+	}
+
+	// [自動返信] Reply-to（メールアドレス）
+	if ( 'mail_reply_to' === $key ) {
+		return 'noreply@example.com';
 	}
 
 	// 自動返信メール

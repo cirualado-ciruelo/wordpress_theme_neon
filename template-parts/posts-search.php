@@ -16,17 +16,17 @@
 		the_post();
 
 		?>
-		<article class="nn_posts_2__Item">
-			<a class="__Inner _Block"
+		<article class="nn_posts_2__item">
+			<a class="__inner _block"
 			   href="<?php the_permalink(); ?>"
 			   title="<?php the_title(); ?>">
-				<h2 class="nn_posts_2__Title"><?php echo the_title(); ?></h2>
+				<h2 class="nn_posts_2__title"><?php echo the_title(); ?></h2>
 				<?php
 
 				if ( get_the_content() ) :
 
 					?>
-					<p class="nn_posts_2__Exerpt"><?php echo neon_hyper_trim( get_the_content(), 200 ); ?></p>
+					<p class="nn_posts_2__exerpt"><?php echo neon_hyper_trim( get_the_content(), 200 ); ?></p>
 					<?php
 
 				endif;

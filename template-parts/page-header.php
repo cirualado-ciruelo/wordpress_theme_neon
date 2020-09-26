@@ -64,26 +64,26 @@ if ( ! is_front_page() ) :
 	}
 
 	?>
-	<header class="PrimaryContainer__Head">
-		<div class="_Container">
-			<div class="PageHeader">
-				<div class="PageHeader__group_1">
-					<div class="PageHeader__Title">
-						<<?php echo $page_header_title_tag; ?> class="PageHeader__MainTitle">
+	<header class="primaryContainer__head">
+		<div class="_container">
+			<div class="pageHeader">
+				<div class="pageHeader__group_1">
+					<div class="pageHeader__title">
+						<<?php echo $page_header_title_tag; ?> class="pageHeader__mainTitle">
 							<?php echo $page_header_title_ja; ?>
 						</<?php echo $page_header_title_tag; ?>>
 
-						<small class="PageHeader__SubTitle">
+						<small class="pageHeader__subTitle">
 							<?php echo ucwords( $page_header_title_en ); ?>
 						</small>
-					</div><!-- /.PageHeader__Title -->
-				</div><!-- /.PageHeader__group_1 -->
+					</div><!-- /.pageHeader__title -->
+				</div><!-- /.pageHeader__group_1 -->
 
-				<div class="PageHeader__group_2">
-					<div class="PageHeader__Image" <?php echo $page_header_style; ?>></div>
-				</div><!-- /.PageHeader__group_2 -->
-			</div><!-- /.PageHeader -->
-		</div><!-- /._Container -->
+				<div class="pageHeader__group_2">
+					<div class="pageHeader__image" <?php echo $page_header_style; ?>></div>
+				</div><!-- /.pageHeader__group_2 -->
+			</div><!-- /.pageHeader -->
+		</div><!-- /._container -->
 	</header>
 	<?php
 

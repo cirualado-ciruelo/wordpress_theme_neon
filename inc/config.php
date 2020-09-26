@@ -260,7 +260,7 @@ function neon_option_class( $class ) {
 
 	$option_class = $class;
 
-	if ( 'nn_posts_1__List' === $class ) {
+	if ( 'nn_posts_1__list' === $class ) {
 		if ( get_option( 'show_on_front' ) && $post->ID == get_option( 'page_on_front' ) ) {
 			$option_class .= ' -scroll_column';
 		}

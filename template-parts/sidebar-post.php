@@ -10,7 +10,7 @@
 
 ?>
 <div class="sidebar_1">
-	<section class="sidebar_1__Item">
+	<section class="sidebar_1__item">
 		<h2 class="title_lv3_1">カテゴリ</h2>
 
 		<?php
@@ -18,13 +18,13 @@
 		echo neon_the_term_list(
 			neon_get_template_post_data( 'category' ),
 			'term_1',
-			'term_1__List',
-			'sidebar_1__Term'
+			'term_1__list',
+			'sidebar_1__term'
 		);
 
 		?>
 	</section>
-	<section class="sidebar_1__Item">
+	<section class="sidebar_1__item">
 		<h2 class="title_lv3_1">タグ</h2>
 
 		<?php
@@ -32,13 +32,13 @@
 		echo neon_the_term_list(
 			neon_get_template_post_data( 'post_tag' ),
 			'term_2',
-			'term_2__List',
-			'sidebar_1__Term'
+			'term_2__list',
+			'sidebar_1__term'
 		);
 
 		?>
 	</section>
-	<section class="sidebar_1__Item">
+	<section class="sidebar_1__item">
 		<h2 class="title_lv3_1">アーカイブ</h2>
 
 		<button class="nn_button_toggle_1"
@@ -46,7 +46,7 @@
 			月間アーカイブ
 		</button>
 
-		<div class="_Hidden"
+		<div class="nn_button_toggle_1_display"
 		     data-action="toggleDisplay">
 			<ul class="nn_wp_archiveList_1">
 				<?php
@@ -70,21 +70,21 @@
 			</ul>
 		</div>
 	</section>
-	<section class="sidebar_1__Item">
+	<section class="sidebar_1__item">
 		<h2 class="title_lv3_1">記事を検索</h2>
 
 		<form class="nn_form_searchBox_1"
 		      method="get"
 		      action="<?php echo esc_url( home_url( '/' . neon_the_post_data( 'name' ) . '/' ) ); ?>"
 		      role="search">
-			<div class="nn_form_searchBox_1__Input">
-				<input class="nn_form_parts_text_2 _Sanitize_Text"
+			<div class="nn_form_searchBox_1__input">
+				<input class="nn_form_parts_text_2 _sanitize_text"
 				       type="text"
 				       name="s"
 				       value="<?php echo $_GET['s']; ?>"
 				       placeholder="<?php echo neon_the_post_data(); ?>を検索">
 			</div>
-			<div class="nn_form_searchBox_1__Submit">
+			<div class="nn_form_searchBox_1__submit">
 				<button class="nn_form_parts_submit_2"
 				        type="submit"></button>
 			</div>

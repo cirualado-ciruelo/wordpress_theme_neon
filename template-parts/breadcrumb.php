@@ -8,8 +8,8 @@
  * @since 1.0.0
  */
 
-$bread_crumb_class      = ' class="Breadcrumb__Item"';
-$bread_crumb_body_class = ' class="Breadcrumb__Link"';
+$bread_crumb_class      = ' class="breadcrumb__item"';
+$bread_crumb_body_class = ' class="breadcrumb__link"';
 $bread_crumb_itemprop_position = 1;
 
 $bread_crumb_micro_data = array(
@@ -135,9 +135,9 @@ if ( $_GET['s'] ) {
 }
 
 ?>
-<div class="Breadcrumb">
-	<div class="_Container -larger_03">
-		<ol class="Breadcrumb__List"
+<div class="breadcrumb">
+	<div class="_container">
+		<ol class="breadcrumb__list"
 		    itemscope
 		    itemtype="<?php echo $bread_crumb_micro_data['url'] . $bread_crumb_micro_data['list']; ?>">
 			<li <?php echo $bread_crumb_class; ?>
@@ -152,7 +152,11 @@ if ( $_GET['s'] ) {
 					      content="1">
 				</a>
 			</li>
-			<?php echo $bread_crumb_next_item; ?>
+			<?php
+
+			echo $bread_crumb_next_item;
+
+			?>
 		</ol>
-	</div><!-- /._Container -->
-</div><!-- /.Breadcrumb -->
+	</div><!-- /._container -->
+</div><!-- /.breadcrumb -->

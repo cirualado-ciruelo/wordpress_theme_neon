@@ -15,20 +15,20 @@
  */
 
 ?>
-<section class="ContainerTree__Branch -size_1">
-	<div class="_Container">
+<section class="containerTree__branch -gapSize_1">
+	<div class="_container">
 		<p class="_nn_text_2">
 			制作進行・アニメーター・声優・3DCGクリエイター・脚本家志望としてそれぞれアニメーション業界に入って夢を追う5人の若い女性を中心に、<br>
 			作品の完成を目指して奮闘するアニメーション業界の日常を描く群像劇である。
 		</p>
-	</div><!-- /._Container -->
-</section><!-- /.ContainerTree__Branch -->
+	</div><!-- /._container -->
+</section><!-- /.containerTree__branch -->
 
-<section class="ContainerTree__Branch">
-	<div class="_Container">
+<section class="containerTree__branch">
+	<div class="_container">
 		<p class="_nn_text_2">
 			制作進行・アニメーター・声優・3DCGクリエイター・脚本家志望としてそれぞれアニメーション業界に入って夢を追う5人の若い女性を中心に、<br>
 			作品の完成を目指して奮闘するアニメーション業界の日常を描く群像劇である。
 		</p>
-	</div><!-- /._Container -->
-</section><!-- /.ContainerTree__Branch -->
+	</div><!-- /._container -->
+</section><!-- /.containerTree__branch -->

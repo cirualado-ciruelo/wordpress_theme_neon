@@ -9,10 +9,10 @@
  */
 
 ?>
-<div class="ContainerTree__Branch">
-	<div class="_Container -smaller_1">
+<div class="containerTree__branch">
+	<div class="_container -smaller_1">
 		<div class="nn_form_base_1">
-			<div class="_Ladder">
+			<div class="_ladder">
 				<?php
 
 				// 確認画面
@@ -44,10 +44,10 @@
 					else :
 
 						?>
-						<div class="form_ThanksContent">
-							<h3 class="nn_title_lv1_1">お問い合わせ<br class="_Lite_inline">ありがとうございます。</h3>
+						<div class="form_thanksContent">
+							<h3 class="nn_title_lv1_1">お問い合わせ<br class="_lite_inline">ありがとうございます。</h3>
 
-							<div class="_Ladder">
+							<div class="_ladder">
 								<p class="_nn_text_1">
 									この度はお問い合わせいただきありがとうございます。<br>
 									改めて担当よりご返信させていただきます。
@@ -56,8 +56,8 @@
 									<a class="nn_link_left_1"
 									   href="<?php echo esc_url( home_url() ); ?>">TOPにもどる</a>
 								</p>
-							</div><!-- /._Ladder -->
-						</div><!-- /.form_ThanksContent -->
+							</div><!-- /._ladder -->
+						</div><!-- /.form_thanksContent -->
 						<?php
 
 					endif;
@@ -93,6 +93,6 @@
 				ob_start();
 
 				?>
-			</div><!-- /._Ladder --><!-- form_base_t_01 -->
-	</div><!-- /._Container -->
-</div><!-- /.ContainerTree__Branch -->
+			</div><!-- /._ladder -->
+	</div><!-- /._container -->
+</div><!-- /.containerTree__branch -->

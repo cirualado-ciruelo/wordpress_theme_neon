@@ -878,8 +878,8 @@ function neon_the_has_term_list( $tax = null, $class = null, $wrapper = null, $l
 				}
 
 				$item_class = explode( ' ', $class )[0];
-				$term_list .= '<li class="' . $item_class . '__Item">
-					<' . $set_tag_start . ' class="__Inner ' . $child_class . '">'
+				$term_list .= '<li class="' . $item_class . '__item">
+					<' . $set_tag_start . ' class="__inner ' . $child_class . '">'
 						. $term_data->name
 					. '</' . $set_tag_end . '>
 				</li>';
@@ -932,8 +932,8 @@ function neon_the_term_list( $tax = null, $class = null, $wrapper = null, $class
 		foreach ( $any_term_object as $any_term_data ) {
 			if ( 1 !== $any_term_data->term_id ) {
 				$item_class     = explode( ' ', $class )[0];
-				$any_term_list .= '<li class="' . $item_class . '__Item">
-					<a class="__Inner" href="' . esc_url( get_term_link( $any_term_data ) ) . '">'
+				$any_term_list .= '<li class="' . $item_class . '__item">
+					<a class="__inner" href="' . esc_url( get_term_link( $any_term_data ) ) . '">'
 						. $any_term_data->name
 					. '</a>
 				</li>';

@@ -3,14 +3,14 @@
  * The template for displaying the footer
  *
  * </div>
- * <!-- /.PrimaryContainer -->
+ * <!-- /.primaryContainer -->
  * までを全ページ共通で表示します。
  *
  * サイドバーが無いページは、
  *     </article>
- * <!-- /.ContainerTree -->
+ * <!-- /.containerTree -->
  * </main>
- * <!-- /.PrimaryContainer__Torso -->
+ * <!-- /.primaryContainer__torso -->
  * までを全ページ共通で表示します。
  *
  * @package WordPress
@@ -18,91 +18,91 @@
  */
 
 ?>
-					<section class="ContainerTree__Branch">
-						<div class="_Container">
+					<section class="containerTree__branch">
+						<div class="_container">
 							<div class="nn_banner_1">
-								<ul class="nn_banner_1__List">
-									<li class="nn_banner_1__Item">
-										<a class="__Inner _Block"
+								<ul class="nn_banner_1__list">
+									<li class="nn_banner_1__item">
+										<a class="__inner _block"
 										   target="_blank"
 										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
-											<img class="__Src"
+											<img class="__src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_1.jpg"
 											     alt="">
 										</a>
 									</li>
-									<li class="nn_banner_1__Item">
-										<a class="__Inner _Block"
+									<li class="nn_banner_1__item">
+										<a class="__inner _block"
 										   target="_blank"
 										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
-											<img class="__Src"
+											<img class="__src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_2.jpg"
 											     alt="">
 										</a>
 									</li>
-									<li class="nn_banner_1__Item">
-										<a class="__Inner _Block"
+									<li class="nn_banner_1__item">
+										<a class="__inner _block"
 										   target="_blank"
 										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
-											<img class="__Src"
+											<img class="__src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_3.jpg"
 											     alt="">
 										</a>
 									</li>
 								</ul>
 							</div><!-- /.nn_banner_1 -->
-						</div><!-- /._Container -->
-					</section><!-- /.ContainerTree__Branch -->
+						</div><!-- /._container -->
+					</section><!-- /.containerTree__branch -->
 					<?php
 
 					if ( ! neon_is_sidebar() ) :
 
 						?>
-				</article><!-- /.ContainerTree -->
-			</main><!-- /.PrimaryContainer__Torso -->
+				</article><!-- /.containerTree -->
+			</main><!-- /.PrimaryContainer__torso -->
 			<?php
 
 					// ! neon_is_sidebar()
 					endif;
 
 	?>
-	</div><!-- /.PrimaryContainer__Body -->
+	</div><!-- /.PrimaryContainer__body -->
 
-	<button class="button_PageTop"
+	<button class="button_ageTop"
 	        type="button"
 	        title="ページのトップへ戻る"
 	        data-click="scrolToPageTop"
 	        data-scroll="anyTimingToggle"></button>
 </div><!-- /.PrimaryContainer -->
 
-<footer class="Footer">
-	<div class="Footer__Ladder _Container">
-		<div class="Footer__group_1">
-			<div class="Footer__group_2">
+<footer class="site_footer">
+	<div class="site_footer__ladder _container">
+		<div class="site_footer__group_1">
+			<div class="site_footer__group_2">
 				<?php
 
 				neon_the_menu( 'footer' );
 
 				?>
-			</div><!-- /.Footer__group_2 -->
-			<div class="Footer__group_3">
-				<div class="_Ladder">
-					<p class="Footer__Logo">
-						<img class="__Src"
+			</div><!-- /.site_footer__group_2 -->
+			<div class="site_footer__group_3">
+				<div class="_ladder">
+					<p class="site_footer__logo">
+						<img class="__src"
 						     src="<?php echo THEME_IMG_URL; ?>/logo_neonWh.svg"
 						     alt="">
 					</p>
-					<address class="Footer__Address">
+					<address class="site_footer__address">
 						<p>
 							〒939-1835 富山県南砺市立野原東1508-8<br>
 							TEL|0763-62-4139
 						</p>
 					</address>
-				</div><!-- /._Ladder -->
-			</div><!-- /.Footer__group_3 -->
-		</div><!-- /.Footer__group_1 -->
-		<div class="Footer__group_4">
-			<div class="_Ladder">
+				</div><!-- /._ladder -->
+			</div><!-- /.site_footer__group_3 -->
+		</div><!-- /.site_footer__group_1 -->
+		<div class="site_footer__group_4">
+			<div class="_ladder">
 				<?php
 
 				/**
@@ -113,12 +113,12 @@
 				neon_the_menu( 'footer-sub' );
 
 				?>
-			</div><!-- /._Ladder -->
-		</div><!-- /.Footer__group_4 -->
+			</div><!-- /._ladder -->
+		</div><!-- /.site_footer__group_4 -->
 
-		<small class="Footer__Copyright">&copy; <?php echo date( 'Y' ); ?> SHIROBAKO 製作委員</small>
-	</div><!-- /._Container -->
-</footer><!-- /.Footer -->
+		<small class="site_footer__copyright">&copy; <?php echo date( 'Y' ); ?> SHIROBAKO 製作委員</small>
+	</div><!-- /._container -->
+</footer><!-- /.site_footer -->
 <?php
 
 // HTML圧縮End（出力）
@@ -136,6 +136,5 @@
 	};
 </script>
 <?php wp_footer(); ?>
-</div><!-- /._Body -->
 </body>
 </html>

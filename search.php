@@ -31,11 +31,11 @@ else :
 	}
 
 	?>
-	<section class="ContainerTree__Branch">
-		<div class="_Container">
+	<section class="containerTree__branch">
+		<div class="_container">
 			<h2 class="nn_title_lv2_1"><?php echo $result_title; ?></h2>
 
-			<div class="_Ladder">
+			<div class="_ladder">
 				<?php
 
 				// 検索条件が空だったら
@@ -86,9 +86,9 @@ else :
 				endif;
 
 				?>
-			</div><!-- /._Ladder -->
-		</div><!-- /._Container -->
-	</section><!-- /.ContainerTree__Branch -->
+			</div><!-- /._ladder -->
+		</div><!-- /._container -->
+	</section><!-- /.containerTree__branch -->
 	<?php
 
 	get_footer();

@@ -11,11 +11,11 @@
 get_header();
 
 ?>
-<div class="ContainerTree__Branch">
-	<div class="_Container">
-		<div class="HasSideContainer">
-			<main class="HasSideContainer__Main">
-				<article class="Ladder -size_M">
+<div class="containerTree__branch">
+	<div class="_container">
+		<div class="hasSideContainer">
+			<main class="hasSideContainer__main">
+				<article class="_ladder -gapSize_M">
 					<?php
 
 					if ( have_posts() ) :
@@ -105,9 +105,9 @@ get_header();
 
 					?>
 				</article>
-			</main><!-- /.HasSideContainer__Main -->
+			</main><!-- /.hasSideContainer__main -->
 
-			<aside class="HasSideContainer__Side">
+			<aside class="hasSideContainer__side">
 				<?php
 
 				/**
@@ -117,9 +117,9 @@ get_header();
 
 				?>
 			</aside>
-		</div><!-- /.HasSideContainer -->
-	</div><!-- /._Container -->
-</div><!-- /.ContainerTree__Branch -->
+		</div><!-- /.hasSideContainer -->
+	</div><!-- /._container -->
+</div><!-- /.containerTree__branch -->
 <?php
 
 get_footer();

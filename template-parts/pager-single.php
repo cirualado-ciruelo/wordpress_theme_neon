@@ -15,16 +15,16 @@ if ( get_previous_post() || get_next_post() ) :
 
 	?>
 	<div class="nn_article_navigation_1">
-		<ul class="nn_article_navigation_1__List">
-			<li class="nn_article_navigation_1__Item -prev">
+		<ul class="nn_article_navigation_1__list">
+			<li class="nn_article_navigation_1__item -prev">
 				<?php
 
 				if ( $previous_post_data ) :
 
 					?>
-					<a class="__Inner"
+					<a class="__inner"
 					   href="<?php echo esc_url( get_permalink( $previous_post_data->ID ) ); ?>">
-						<span class="nn_article_navigation_1__Text">前の記事</span>
+						<span class="nn_article_navigation_1__text">前の記事</span>
 					</a>
 					<?php
 
@@ -32,21 +32,21 @@ if ( get_previous_post() || get_next_post() ) :
 
 				?>
 			</li>
-			<li class="nn_article_navigation_1__Item -back">
-				<a class="__Inner"
+			<li class="nn_article_navigation_1__item -back">
+				<a class="__inner"
 				   href="<?php echo esc_url( neon_the_post_data( 'link' ) ); ?>">
-					<span class="nn_article_navigation_1__Text">一覧へ戻る</span>
+					<span class="nn_article_navigation_1__text">一覧へ戻る</span>
 				</a>
 			</li>
-			<li class="nn_article_navigation_1__Item -next">
+			<li class="nn_article_navigation_1__item -next">
 			<?php
 
 			if ( $next_post_data ) :
 
 				?>
-				<a class="__Inner"
+				<a class="__inner"
 				   href="<?php echo esc_url( get_permalink( $next_post_data->ID ) ); ?>">
-					<span class="nn_article_navigation_1__Text">次の記事</span>
+					<span class="nn_article_navigation_1__text">次の記事</span>
 				</a>
 				<?php
 

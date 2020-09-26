@@ -13,8 +13,8 @@ $share_text = get_the_title()
 
 ?>
 <div class="nn_sns_share_1">
-	<ul class="nn_sns_share_1__List">
-		<li class="nn_sns_share_1__Item">
+	<ul class="nn_sns_share_1__list">
+		<li class="nn_sns_share_1__item">
 			<div id="fb-root"></div>
 			<script async
 			        defer
@@ -28,7 +28,7 @@ $share_text = get_the_title()
 			     data-show-faces="false"
 			     data-share="true"></div>
 		</li>
-		<li class="nn_sns_share_1__Item">
+		<li class="nn_sns_share_1__item">
 			<a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
 			   class="twitter-share-button"
 			   data-text="<?php echo $share_text; ?>"
@@ -39,7 +39,7 @@ $share_text = get_the_title()
 			        src="//platform.twitter.com/widgets.js"
 			        charset="utf-8"></script>
 		</li>
-		<li class="nn_sns_share_1__Item">
+		<li class="nn_sns_share_1__item">
 			<div class="line-it-button"
 			     data-lang="ja"
 			     data-type="like"

@@ -8,8 +8,8 @@
  * までを全ページ共通で表示します.
  *
  * サイドバーが無いページは、
- * <main class="PrimaryContainer__Torso">
- *     <article class="ContainerTree">
+ * <main class="primaryContainer__torso">
+ *     <article class="containerTree">
  * までを全ページ共通で表示します.
  *
  * @package WordPress
@@ -101,52 +101,47 @@ wp_body_open();
       viewport.setAttribute('content', 'width=device-width, user-scalable=0');
     }
 </script>
-
-
-<div class="_Body">
 <?php
 
 // HTML圧縮Start
 // ob_start();
 
 ?>
-<header class="Header">
-	<div class="Header__Body">
-		<div class="_Container">
-			<div class="Header__group_1">
-				<div class="Header__group_2">
+<header class="site_header">
+	<div class="site_header__body">
+		<div class="_container">
+			<div class="site_header__group_1">
+				<div class="site_header__group_2">
 					<?php is_front_page() ? $header_logo_tag = 'h1' : $header_logo_tag = 'p'; ?>
-					<<?php echo $header_logo_tag; ?> class="Header__Logo">
-						<a class="__Inner _Block"
+					<<?php echo $header_logo_tag; ?> class="site_header__logo">
+						<a class="__inner _block"
 						   href="<?php echo esc_url( home_url() ); ?>">
-							<img class="Header__SrcLogo"
+							<img class="__src"
 							     src="<?php echo THEME_IMG_URL; ?>/logo_neon_.svg"
 							     alt="<?php echo get_bloginfo( 'name' ); ?>">
 						</a>
 					</<?php echo $header_logo_tag; ?>>
-				</div><!-- /.Header__group_2 -->
-				<div class="Header__group_3">
-					<nav class="Globalnav _MinL_block">
+				</div><!-- /.site_header__group_2 -->
+				<div class="site_header__group_3">
+					<nav class="Globalnav _minL_block">
 						<?php
 
 						neon_the_menu( 'global' );
 
-echo neon_get_data_from_system_page_id( 'p1', 'link' );
-
 						?>
 					</nav>
-					<button class="button_HamburgerMenu _MaxL_block"
+					<button class="button_HamburgerMenu _maxL_block"
 					        type="button"
 					        data-click="hamburgerMenu"
 					        title="全てのメニュー"></button>
-				</div><!-- /.Header__group_3 -->
-			</div><!-- /.Header__group_1 -->
-		</div><!-- /._Container -->
-	</div><!-- /.Header__Body -->
-</header><!-- /.Header -->
+				</div><!-- /.site_header__group_3 -->
+			</div><!-- /.site_header__group_1 -->
+		</div><!-- /._container -->
+	</div><!-- /.site_header__body -->
+</header><!-- /.site_header -->
 
-<div class="PrimaryContainer">
-	<div class="HamburgerMenu"
+<div class="primaryContainer">
+	<div class="hamburgerMenu"
 	     data-action="hamburgerMenu">
 		<?php
 
@@ -158,9 +153,9 @@ echo neon_get_data_from_system_page_id( 'p1', 'link' );
 		get_template_part( 'template-parts/sns', 'link' );
 
 		?>
-	</div><!-- /.HamburgerMenu -->
+	</div><!-- /.hamburgerMenu -->
 
-	<div class="PrimaryContainer__Body">
+	<div class="primaryContainer__body">
 		<?php
 
 		/**
@@ -171,8 +166,8 @@ echo neon_get_data_from_system_page_id( 'p1', 'link' );
 		if ( ! neon_is_sidebar() ) :
 
 			?>
-			<main class="PrimaryContainer__Torso">
-				<article class="ContainerTree">
+			<main class="primaryContainer__torso">
+				<article class="containerTree">
 			<?php
 
 		endif;

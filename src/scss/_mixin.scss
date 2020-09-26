@@ -7,26 +7,26 @@
 
 ////
 /// メディアクエリのテンプレート
-@mixin mq( $breakpoint: MaxS, $breakpoint2: null ) {
+@mixin mq( $breakpoint: maxS, $breakpoint2: null ) {
 	@each $name, $propaty in $break_points {
 		@if $breakpoint2 {
 			@media ( max-width: $breakpoint ) and ( min-width: $breakpoint2 ) {
 				@content;
 			}
 		} @else if $breakpoint == $name {
-			@if str-index( $breakpoint, 'Max' ) and str-index( $breakpoint, 'Min' ) {
-				@media ( min-width: map-get( $propaty, 'Min' ) ) and ( max-width: map-get( $propaty, 'Max' ) ) {
+			@if str-index( $breakpoint, 'max' ) and str-index( $breakpoint, 'min' ) {
+				@media ( min-width: map-get( $propaty, 'min' ) ) and ( max-width: map-get( $propaty, 'max' ) ) {
 					@content;
 				}
 			}
 
-			@if str-index( $breakpoint, 'Max' ) and not str-index( $breakpoint, 'Min' ) {
+			@if str-index( $breakpoint, 'max' ) and not str-index( $breakpoint, 'min' ) {
 				@media ( max-width: $propaty ) {
 					@content;
 				}
 			}
 
-			@if str-index( $breakpoint, 'Min' ) and not str-index( $breakpoint, 'Max' ) {
+			@if str-index( $breakpoint, 'min' ) and not str-index( $breakpoint, 'max' ) {
 				@media ( min-width: $propaty ) {
 					@content;
 				}

@@ -11,12 +11,12 @@
 get_header();
 
 ?>
-<div class="ContainerTree__Branch">
-	<div class="_Container">
+<div class="containerTree__branch">
+	<div class="_container">
 	</div>
-	<!-- /._Container -->
+	<!-- /._container -->
 </div>
-<!-- /.ContainerTree__Branch -->
+<!-- /.containerTree__branch -->
 <?php
 
 get_footer();

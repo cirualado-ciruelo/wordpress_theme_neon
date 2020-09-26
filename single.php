@@ -14,29 +14,29 @@ while ( have_posts() ) :
 	the_post();
 
 	?>
-	<div class="ContainerTree__Branch _bg_color_gray_1">
-		<div class="_Container">
-			<div class="HasSideContainer">
+	<div class="containerTree__branch _bg_color_gray_1">
+		<div class="_container">
+			<div class="hasSideContainer">
 
-				<main class="HasSideContainer__Main">
-					<div class="article_container_1 _Ladder -size_XL">
-						<header class="article_container_1__Head">
+				<main class="hasSideContainer__main">
+					<div class="article_container_1 _ladder -gapSize_XL">
+						<header class="article_container_1__head">
 							<div class="article_head_1">
 								<h1 class="article_title_1"><?php the_title(); ?></h1>
 
-								<div class="_Ladder">
+								<div class="_ladder">
 									<?php
 
 									if ( has_post_thumbnail() ) :
 
 										?>
 										<div class="article_eyeCatch_1">
-											<img class="__Src _Full_inline"
+											<img class="__src _full_inline"
 											     src="<?php echo neon_get_img_data( 'thumb', 'major_full_content' ); ?>"
 											     srcset="<?php echo neon_get_img_data( 'thumb', 'major_full_content@2x' ); ?> 2x,
 											             <?php echo neon_get_img_data( 'thumb', 'major_full_content' ); ?> 1x"
 											     alt="<?php echo neon_get_img_data( 'thumb', 'alt' ); ?>">
-											<img class="__Src _Lite_inline"
+											<img class="__src _lite_inline"
 											     src="<?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?>"
 											     srcset="<?php echo neon_get_img_data( 'thumb', 'template_lite_S@2x' ); ?> 2x,
 											             <?php echo neon_get_img_data( 'thumb', 'template_lite_S' ); ?> 1x"
@@ -47,7 +47,7 @@ while ( have_posts() ) :
 									endif;
 
 									?>
-									<div class="article_head_1__Meta _Ladder -size_XS">
+									<div class="article_head_1__meta _ladder -gapSize_XS">
 										<?php
 
 										echo neon_the_time_tag( 'article_date_1', 'Y/m/d' );
@@ -55,25 +55,25 @@ while ( have_posts() ) :
 										echo neon_the_has_term_list(
 											neon_get_template_post_data( 'category' ),
 											'term_1',
-											'term_1__List',
+											'term_1__list',
 											1
 										);
 
 										echo neon_the_has_term_list(
 											neon_get_template_post_data( 'post_tag' ),
 											'term_2',
-											'term_2__List',
+											'term_2__list',
 											1
 										);
 
 										?>
 									</div>
-								</div><!-- /._Ladder -->
+								</div><!-- /._ladder -->
 							</div><!-- /.article_head_1 -->
 						</header>
-						<section class="article_container_1__Torso _Ladder -size_L">
+						<section class="article_container_1__torso _ladder -gapSize_L">
 							<article class="foundation_article_1">
-								<div class="wp_TheContent">
+								<div class="wp_theContent">
 									<?php the_content(); ?>
 								</div>
 								<?php
@@ -88,7 +88,7 @@ while ( have_posts() ) :
 								?>
 							</article>
 						</section>
-						<footer class="article_container_1__Footer _Ladder">
+						<footer class="article_container_1__footer _ladder">
 							<?php
 
 							/**
@@ -104,9 +104,9 @@ while ( have_posts() ) :
 							?>
 						</footer>
 					</div><!-- /.article_container_1 -->
-				</main><!-- /.HasSideContainer__Main -->
+				</main><!-- /.hasSideContainer__main -->
 
-				<aside class="HasSideContainer__Side">
+				<aside class="hasSideContainer__side">
 					<?php
 
 					/**
@@ -117,9 +117,9 @@ while ( have_posts() ) :
 					?>
 				</aside>
 
-			</div><!-- /.HasSideContainer -->
-		</div><!-- /._Container -->
-	</div><!-- /.ContainerTree__Branch -->
+			</div><!-- /.hasSideContainer -->
+		</div><!-- /._container -->
+	</div><!-- /.containerTree__branch -->
 	<?php
 
 endwhile;

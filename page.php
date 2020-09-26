@@ -55,11 +55,11 @@ else :
 	else :
 
 		?>
-		<div class="ContainerTree__Branch">
-			<div class="_Container">
-				<p class="_nn_text_1 _Tac">このページは現在準備中です。</p>
-			</div><!-- /._Container -->
-		</div><!-- /.ContainerTree__Branch -->
+		<div class="containerTree__branch">
+			<div class="_container">
+				<p class="_nn_text_1 _tac">このページは現在準備中です。</p>
+			</div><!-- /._container -->
+		</div><!-- /.containerTree__branch -->
 		<?php
 
 	// if $page_file

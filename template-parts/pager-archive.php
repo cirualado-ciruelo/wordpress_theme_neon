@@ -11,7 +11,7 @@
 $is_pager_debug = 1;
 
 ?>
-<div class="_Ladder__Pager">
+<div class="_ladder__pager">
 	<div class="nn_wp_archivePager_1">
 		<?php
 
@@ -57,4 +57,4 @@ $is_pager_debug = 1;
 
 		?>
 	</div><!-- /.nn_wp_archivePager_1 -->
-</div><!-- /._Ladder__Pager -->
+</div><!-- /._ladder__pager -->

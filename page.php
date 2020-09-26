@@ -15,14 +15,16 @@ $page_file = locate_template( 'pages/' . neon_get_data_from_system_page_id( '', 
 $use_library = array();
 
 // 使用するライブラリのリスト作成
-foreach ( file( $page_file ) as $page_file_line ) {
-	if ( strstr( $page_file_line, ' * is_' ) ) {
-		$page_file_line = str_replace( ["\n", ' * '], '', $page_file_line );
-		$use_library[ $page_file_line ] = 1;
-	}
+if ( $page_file ) {
+	foreach ( file( $page_file ) as $page_file_line ) {
+		if ( strstr( $page_file_line, ' * is_' ) ) {
+			$page_file_line = str_replace( ["\n", ' * '], '', $page_file_line );
+			$use_library[ $page_file_line ] = 1;
+		}
 
-	if ( strstr( $page_file_line, 'end;' ) ) {
-		break;
+		if ( strstr( $page_file_line, 'end;' ) ) {
+			break;
+		}
 	}
 }
 

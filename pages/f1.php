@@ -136,7 +136,7 @@
 			<dd class="nn_form_table_1__data">
 				<div class="nn_form_parts_check_1">
 					<div class="__inner">
-						[mwform_checkbox class="nn_form_parts_check_1__Input _sanitize_hiddenInput"
+						[mwform_checkbox class="nn_form_parts_check_1__input _sanitize_hiddenInput"
 						                 name="お問い合わせ種別"
 						                 children="種別1,種別2,種別3,種別4,種別5,種別6,種別7,種別8,種別9,種別10,種別11"
 						                 separator=","]
@@ -162,7 +162,7 @@
 			<dd class="nn_form_table_1__data">
 				<div class="nn_form_parts_check_1">
 					<div class="__inner">
-						[mwform_checkbox class="nn_form_parts_check_1__Input _sanitize_hiddenInput"
+						[mwform_checkbox class="nn_form_parts_check_1__input _sanitize_hiddenInput"
 						                 name="利用規約への同意"
 						                 children="同意します"
 						                 separator=","]

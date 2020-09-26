@@ -2,7 +2,7 @@
 /**
  * MW WP Form settings
  *
- * ID    16
+ * ID    9
  * label contact
  *
  * =====================================
@@ -25,7 +25,7 @@
  *
  * @since 1.0.0
  */
-function neon_mw_admin_mail_raw_setting_16( $mailRaw, $values, $data ) {
+function neon_mw_admin_mail_raw_setting_9( $mailRaw, $values, $data ) {
 	// to, cc, bcc では {キー} は使用できません。
 	// $data->get( 'hoge' ) で送信されたデータが取得できます。
 
@@ -109,7 +109,7 @@ function neon_mw_admin_mail_raw_setting_16( $mailRaw, $values, $data ) {
 	return $mailRaw;
 }
 
-add_filter( 'mwform_admin_mail_raw_mw-wp-form-16', 'neon_mw_admin_mail_raw_setting_16', 10, 3 );
+add_filter( 'mwform_admin_mail_raw_mw-wp-form-9', 'neon_mw_admin_mail_raw_setting_9', 10, 3 );
 
 /**
  * MW WP Form
@@ -118,7 +118,7 @@ add_filter( 'mwform_admin_mail_raw_mw-wp-form-16', 'neon_mw_admin_mail_raw_setti
  *
  * @since 1.0.0
  */
-function neon_mw_auto_mail_raw_setting_16( $mailRaw, $values, $data ) {
+function neon_mw_auto_mail_raw_setting_9( $mailRaw, $values, $data ) {
 	// to, cc, bcc では {キー} は使用できません。
 	// $data->get( 'hoge' ) で送信されたデータが取得できます。
 
@@ -159,7 +159,7 @@ function neon_mw_auto_mail_raw_setting_16( $mailRaw, $values, $data ) {
 	return $mailRaw;
 }
 
-add_filter( 'mwform_auto_mail_raw_mw-wp-form-16', 'neon_mw_auto_mail_raw_setting_16', 10, 3 );
+add_filter( 'mwform_auto_mail_raw_mw-wp-form-9', 'neon_mw_auto_mail_raw_setting_9', 10, 3 );
 
 /**
  * MW WP Form バリデーション設定
@@ -167,7 +167,7 @@ add_filter( 'mwform_auto_mail_raw_mw-wp-form-16', 'neon_mw_auto_mail_raw_setting
  *
  * @since 1.0.0
  */
-function neon_mw_validation_16( $validation ) {
+function neon_mw_validation_9( $validation ) {
 	$validation->set_rule( 'お名前', 'noEmpty' );
 	$validation->set_rule( '性別', 'required' );
 	$validation->set_rule( 'お住い', 'noEmpty' );
@@ -183,4 +183,4 @@ function neon_mw_validation_16( $validation ) {
 	return $validation;
 }
 
-add_filter( 'mwform_validation_mw-wp-form-16', 'neon_mw_validation_16', 10, 3 );
+add_filter( 'mwform_validation_mw-wp-form-9', 'neon_mw_validation_9', 10, 3 );

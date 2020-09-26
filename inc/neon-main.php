@@ -523,13 +523,12 @@ function neon_get_data_from_system_page_id( $id = null, $type = null ) {
 	if ( 'get' === $type ) {
 		return $system_page_id . wp_reset_postdata();
 	} elseif ( 'get_anc' === $type ) {
-		$system_page_id = get_post_meta(
+		$system_page_id = get_field(
+			'acf_page_system_id',
 			get_page(
 				end( get_ancestors( $post->ID, 'page' ) ),
 				'page'
-			)->ID,
-			'systemPageId',
-			true
+			)->ID
 		);
 		return $system_page_id . wp_reset_postdata();
 	} elseif ( 'link' === $type ) {

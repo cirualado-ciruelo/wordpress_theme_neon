@@ -208,7 +208,7 @@ textarea
 {
 	&:focus {
 		outline-color: $color_main_1;
-		border-width: 0 !important;
+		border-width: 0;
 	}
 }
 

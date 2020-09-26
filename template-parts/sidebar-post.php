@@ -38,38 +38,48 @@
 
 		?>
 	</section>
-	<section class="sidebar_1__item">
-		<h2 class="title_lv3_1">アーカイブ</h2>
+	<?php
 
-		<button class="nn_button_toggle_1"
-		        data-click="toggleDisplay">
-			月間アーカイブ
-		</button>
+	$args = array(
+		'type'            => 'monthly',
+		'format'          => 'html',
+		'show_post_count' => true,
+		'post_type'       => 'post',
+		'echo'            => 0,
+	);
+	$month_item_archive = wp_get_archives( $args );
 
-		<div class="nn_button_toggle_1_display"
-		     data-action="toggleDisplay">
-			<ul class="nn_wp_archiveList_1">
-				<?php
+	if ( $month_item_archive ) :
 
-				$args = array(
-					'type'            => 'monthly',
-					'format'          => 'html',
-					'show_post_count' => true,
-					'post_type'       => 'post',
-					'echo'            => 0,
-				);
-				$month_item_archive = wp_get_archives( $args );
+		?>
+		<section class="sidebar_1__item">
+			<h2 class="title_lv3_1">アーカイブ</h2>
 
-				echo preg_replace(
-					'/<\/a>&nbsp;(\([0-9]*\))/',
-					' <span class="nn_wp_archiveList_1__count">$1</span></a>',
-					$month_item_archive
-				);
+			<button class="nn_button_toggle_1"
+			        data-click="toggleDisplay">
+				月間アーカイブ
+			</button>
 
-				?>
-			</ul>
-		</div>
-	</section>
+			<div class="nn_button_toggle_1_display"
+			     data-action="toggleDisplay">
+				<ul class="nn_wp_archiveList_1">
+					<?php
+
+					echo preg_replace(
+						'/<\/a>&nbsp;(\([0-9]*\))/',
+						' <span class="nn_wp_archiveList_1__count">$1</span></a>',
+						$month_item_archive
+					);
+
+					?>
+				</ul>
+			</div>
+		</section>
+		<?php
+
+	endif;
+
+	?>
 	<section class="sidebar_1__item">
 		<h2 class="title_lv3_1">記事を検索</h2>
 

@@ -13,11 +13,11 @@
 	padding: 8px 16px;
 	border: 1px solid #ccc;
 
-	&:focus {
-		border: 2px solid $color_main_1;
-		outline: none !important;
-		padding: 7px 15px;
-	}
+	// &:focus {
+	// 	border: 2px solid $color_main_1;
+	// 	outline: none !important;
+	// 	padding: 7px 15px;
+	// }
 
 	@include before(a1, '') {
 		width: 48px;
@@ -38,10 +38,14 @@
 		}
 	}
 
-	&:focus {
-		&::before {
-			top: -1px;
-			right: -1px;
-		}
-	}
+	// &:focus {
+	// 	&::before {
+	// 		top: -1px;
+	// 		right: -1px;
+	// 	}
+	// }
+}
+
+.nn_button_toggle_1_display {
+	display: none;
 }

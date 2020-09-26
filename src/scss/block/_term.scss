@@ -1,0 +1,44 @@
+/**
+ * term
+ */
+
+
+.term_2__list {
+	@include reset_list(l1, pl1, mt0, mb0);
+
+	display: flex;
+	flex-wrap: wrap;
+	margin: -8px;
+}
+
+.term_2__item {
+	margin: 8px;
+
+	> .__inner {
+		text-decoration: underline;
+	}
+
+	&::before {
+		content: "#";
+	}
+}
+
+
+.term_1__list {
+	@include reset_list(l1, pl1, mt0, mb0);
+
+	display: flex;
+	flex-wrap: wrap;
+	margin: -8px;
+}
+
+.term_1__item {
+	color: #fefefe;
+	background-color: $color_main_1;
+	margin: 8px;
+
+	> .__inner {
+		display: block;
+		padding: 4px 8px;
+	}
+}

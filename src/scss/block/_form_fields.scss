@@ -1,0 +1,22 @@
+/**
+ * form_fields
+ */
+
+
+.form_fields_1 {
+	margin: -8px;
+}
+
+.form_fields_1__grid,
+.form_fields_1__row
+{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.form_fields_1__head,
+.form_fields_1__data
+{
+	padding: 8px;
+}

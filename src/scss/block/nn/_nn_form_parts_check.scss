@@ -1,0 +1,84 @@
+/**
+ * nn_form_parts_check
+ */
+
+
+.nn_form_parts_check_1 {
+	> .__inner {
+		margin-top: -.7em;
+
+		.mw_wp_form_confirm & {
+			margin-top: 0;
+		}
+	}
+
+	.mw_wp_form_confirm & {
+		margin: 0;
+	}
+
+	label {
+		display: inline-block;
+		cursor: pointer;
+
+		> span {
+			display: inline-block;
+			position: relative;
+			padding-left: 35px;
+			margin-top: .7em;
+			margin-right: .7em;
+
+			&::before,
+			&::after
+			{
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+			}
+
+			&::before {
+				width: 20px;
+				height: 20px;
+				background-color: #fefefe;
+				border: 2px solid rgba($color_base, .4);
+				margin-top: -11px;
+				transition: border 300ms ease-in-out,
+				            transform 300ms ease-in-out;
+			}
+
+			&::after {
+				$color: map-get($color_template, 'green_1');
+
+				width: calc( 20px + 20px );
+				height: calc( 20px + 20px );
+				background-color: rgba($color, .3);
+				border-radius: 999px;
+				margin: -10px;
+				margin-top: -21px;
+				opacity: 0;
+				transform: scale(0);
+			}
+		}
+	}
+}
+
+.nn_form_parts_check_1__input {
+	&:checked {
+		+ span {
+			&::before {
+				border-left: 4px solid map-get($color_template, 'green_1');
+				border-bottom: 6px solid map-get($color_template, 'green_1');
+				border-top: 1px solid rgba(0,0,0,0);
+				border-right: 1px solid rgba(0,0,0,0);
+				transform: rotate(-45deg) scaleY(.5) translateY(-5px);
+			}
+
+			&::after {
+				animation-duration: 400ms;
+				animation-timing-function: ease-in-out;
+				animation-name: roundToggle;
+				animation-fill-mode: both;
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+/**
+ * menu
+ */
+
+
+.menu_1 {
+	@include reset_list(l1, pl1, mt0, mb0);
+
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	margin: -5px;
+}
+
+.menu_1__item {
+	margin: 5px;
+}

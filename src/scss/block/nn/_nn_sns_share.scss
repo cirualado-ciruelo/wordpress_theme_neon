@@ -1,0 +1,17 @@
+/**
+ * nn_sns_share
+ */
+
+
+.nn_sns_share_1__list {
+	@include reset_list(l1, pl1, mt0, mb0);
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: -8px;
+}
+
+.nn_sns_share_1__item {
+	margin: 8px;
+}

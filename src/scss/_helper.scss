@@ -1,0 +1,590 @@
+/**
+ * helper
+ */
+
+
+/*
+Ladder
+*/
+
+
+._ladder {
+	> * {
+		margin-top: 32px;
+
+		@include mq {
+			margin-top: 24px;
+		}
+	}
+
+	&.-spaceSize_1 {
+
+	}
+
+	&.-spaceSize_XS {
+		> * {
+			margin-top: 8px;
+		}
+	}
+
+	&.-spaceSize_S {
+		> * {
+			margin-top: 16px;
+		}
+	}
+
+	&.-spaceSize_L {
+		> * {
+			margin-top: 56px;
+
+			@include mq {
+				margin-top: 32px;
+			}
+		}
+	}
+
+	&.-spaceSize_XL {
+		> * {
+			margin-top: 74px;
+
+			@include mq {
+				margin-top: 56px;
+			}
+		}
+	}
+}
+
+[class*='_ladder'] {
+	> * {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+._ladder__link,
+._ladder__pager
+{
+	margin-top: 56px;
+
+	@include mq {
+		margin-top: 40px;
+	}
+}
+
+
+/*
+Text
+*/
+
+
+._text_1 {}
+
+
+/*
+List
+*/
+
+
+._list_inherit,
+._list_inherit__item
+{
+	color: inherit;
+	font: inherit;
+	letter-spacing: inherit;
+	line-height: inherit;
+}
+
+._list_inherit__item {
+	& + & {
+		margin-top: 10px;
+	}
+}
+
+
+/*
+Content width
+*/
+
+
+._container {
+	$space: $mq_gutter_val * 2;
+
+	width: 100%;
+	max-width: map-get($container_width, 'main') + $space;
+	padding-left: $mq_gutter_val;
+	padding-right: $mq_gutter_val;
+	margin-left: auto;
+	margin-right: auto;
+
+	& & {
+		max-width: map-get($container_width, 'main');
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@each $name, $propaty in $container_width {
+		@if $name != 'main' {
+			&.-#{$name} {
+				max-width: $propaty + $space;
+
+				@include mq {
+					max-width: 100%;
+				}
+
+				._container & {
+					max-width: $propaty;
+
+					@include mq {
+						max-width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*
+Detect device
+*/
+
+
+._full_block {
+	display: block;
+}
+
+._full_inBlock {
+	display: inline-block;
+}
+
+._full_inline {
+	display: inline;
+}
+
+._full_table {
+	display: table;
+}
+
+._full_tableCell {
+	display: table-cell;
+}
+
+._full_flex {
+	display: flex;
+}
+
+
+%maxdn {
+	display: none;
+}
+
+._lite_block,
+._lite_inBlock,
+._lite_inline,
+._lite_table,
+._lite_tableCell,
+._lite_flex
+{
+	@extend %maxdn;
+}
+
+// Hidden `._Max~`.
+@each $name, $propaty in $break_points {
+	@if str-index($name, 'max') {
+		._#{$name}_block,
+		._#{$name}_inBlock,
+		._#{$name}_inline,
+		._#{$name}_table,
+		._#{$name}_tableCell,
+		._#{$name}_flex
+		{
+			@extend %maxdn;
+		}
+	}
+}
+
+// Hidden `._Min~` on max-width: [Any propaty].
+@each $name, $propaty in $break_points {
+	@if str-index($name, 'min') and not str-index($name, 'max') {
+		@media ( max-width: $propaty - 0.02px ) {
+			._#{$name}_block,
+			._#{$name}_inBlock,
+			._#{$name}_inline,
+			._#{$name}_table,
+			._#{$name}_tableCell,
+			._#{$name}_flex
+			{
+				display: none;
+			}
+		}
+	}
+}
+
+@each $name, $propaty in $break_points {
+
+	// Detect Full or Lite on size of `MaxS`.
+	@if str-index($name, $detect_primary_size) {
+		@include mq($name) {
+			._full_block,
+			._full_inBlock,
+			._full_inline,
+			._full_table,
+			._full_tableCell,
+			._full_flex
+			{
+				display: none;
+			}
+
+			._lite_block {
+				display: block;
+			}
+
+			._lite_inBlock {
+				display: inline-block;
+			}
+
+			._lite_inline {
+				display: inline;
+			}
+
+			._lite_table {
+				display: table;
+			}
+
+			._lite_tableCell {
+				display: table-cell;
+			}
+
+			._lite_flex {
+				display: flex;
+			}
+		}
+	}
+
+	// Show all size of `Max`.
+	@if str-index($name, 'max') and not str-index($name, 'min') {
+		@include mq($name) {
+			._#{$name}_block {
+				display: block;
+			}
+
+			._#{$name}_inBlock {
+				display: inline-block;
+			}
+
+			._#{$name}_inline {
+				display: inline;
+			}
+
+			._#{$name}_table {
+				display: table;
+			}
+
+			._#{$name}_tableCell {
+				display: table-cell;
+			}
+
+			._#{$name}_flex {
+				display: flex;
+			}
+		}
+	}
+}
+
+// Show between all size of `Min-Max`.
+@each $name, $propaty in $break_points {
+	@if str-index($name, 'min') and str-index($name, 'max') {
+		@include mq($name) {
+			._#{$name}_block {
+				display: block;
+			}
+
+			._#{$name}_inBlock {
+				display: inline-block;
+			}
+
+			._#{$name}_inline {
+				display: inline;
+			}
+
+			._#{$name}_table {
+				display: table;
+			}
+
+			._#{$name}_tableCell {
+				display: table-cell;
+			}
+
+			._#{$name}_flex {
+				display: flex;
+			}
+		}
+	}
+}
+
+
+/*
+Color parts
+*/
+
+
+@each $num, $propaty in $color {
+	._color_#{$num} {
+		color: $propaty;
+	}
+	._bg_color_#{$num} {
+		background-color: $propaty;
+
+		&:not(.-noPad) + &:not(.-noPad) {
+			padding-top: 0;
+		}
+	}
+}
+
+@each $num, $propaty in $color_template {
+	._color_template_#{$num} {
+		color: $propaty;
+	}
+}
+
+
+/*
+General parts
+*/
+
+
+._cf::after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+
+._ofi {
+	width: 100%;
+	height: 100%;
+	font-family: 'object-fit: cover;';
+	object-fit: cover;
+}
+
+
+._overlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 110;
+	background-color: rgba(#fefefe, .85);
+	display: none;
+
+	@include mq {
+		// display: block;
+	}
+}
+
+
+._void {
+	pointer-events: none;
+	cursor: default;
+	opacity: .6;
+}
+
+
+._maskFit {
+	position: relative;
+	padding-top: 60%;
+	overflow: hidden;
+
+	&.-ratio_youtube {
+		padding-top: 56.25%;
+	}
+}
+
+._maskFit__src {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	._maskFit.-ratio_youtube & {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+._scrollTable {
+	@include mq {
+		position: relative;
+
+		&::before {
+			content: "";
+			width: 25%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: -20px;
+			z-index: 2;
+			background: linear-gradient(to right, rgba(#fff,0) 0%,rgba(#fff,1) 88%,rgba(#fff,1) 100%);
+		}
+
+		table {
+			max-width: 800px;
+		}
+	}
+}
+
+._scrollTable__inner {
+	@include mq {
+		width: calc( 100% + 20px );
+		overflow: auto;
+		-webkit-overflow-scrolling: touch !important;
+	}
+}
+
+._scrollTable__content {
+	@include mq {
+		display: flex;
+		width: 800px;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 20px;
+		}
+	}
+}
+
+
+._tac {
+	text-align: center !important;
+}
+
+
+._tal {
+	text-align: left !important;
+}
+
+
+._tar {
+	text-align: right !important;
+}
+
+
+._vt {
+	vertical-align: top !important;
+}
+
+
+._vm {
+	vertical-align: middle !important;
+}
+
+
+._vb {
+	vertical-align: bottom !important;
+}
+
+
+._tdu {
+	text-decoration: underline;
+	word-break: break-all;
+}
+
+
+._fl {
+	float: left;
+}
+
+
+._fr {
+	float: right;
+}
+
+
+._clear {
+	clear: both;
+}
+
+
+._hidden {
+	display: none;
+}
+
+
+._block {
+	display: block;
+}
+
+
+._relative {
+	position: relative;
+}
+
+
+/*
+Form sanitize
+*/
+
+
+._sanitize_submitInput {
+	background-color: transparent;
+}
+
+
+._sanitize_text {
+	line-height: 1;
+	width: 100%;
+	background-color: #fefefe;
+	border-radius: 0;
+	appearance: none;
+
+	&::-webkit-input-placeholder {
+		@include mq(MaxM) {
+			padding-top: .15em;
+		}
+	}
+}
+
+
+._sanitize_hiddenInput {
+	position: absolute;
+	filter: alpha(opacity=0);
+	opacity:0;
+	appearance: none;
+}
+
+
+._sanitize_select {
+	background-color: transparent;
+	border-radius: 0;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+
+
+._sanitize_number {
+	appearance: textfield;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button
+	{
+		appearance: none;
+		margin: 0;
+	}
+}
+
+
+._sanitize_textarea {
+	width: 100%;
+	background-color: #fefefe;
+	border-radius: 0;
+	appearance: none;
+}
+
+
+@import 'helper_nn';

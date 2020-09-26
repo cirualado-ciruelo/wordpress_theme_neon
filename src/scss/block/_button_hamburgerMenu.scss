@@ -1,0 +1,53 @@
+/**
+ * button_hamburgerMenu
+ */
+
+
+.button_hamburgerMenu {
+	$speed: 150ms;
+	$delay: 120ms;
+
+	font-size: 0;
+	width: 40px;
+	height: 40px;
+	position: relative;
+
+	&::before,
+	&::after
+	{
+		content: "";
+		width: 70%;
+		height: 2px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		background-color: $color_main_1;
+		border-radius: 30px;
+		margin: auto;
+		transition: transform $speed, top $speed $delay, bottom $speed $delay;
+	}
+
+	&::before {
+		top: -14px;
+		bottom: 0;
+
+		body.-opened_hamburgerMenu & {
+			width: 60%;
+			top: 0;
+			transform: rotate(45deg);
+			transition: transform $speed $delay, top $speed, bottom $speed;
+		}
+	}
+
+	&::after {
+		top: 0;
+		bottom: -14px;
+
+		body.-opened_hamburgerMenu & {
+			width: 60%;
+			bottom: 0;
+			transform: rotate(-45deg);
+			transition: transform $speed $delay, top $speed, bottom $speed;
+		}
+	}
+}

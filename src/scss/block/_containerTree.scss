@@ -1,0 +1,31 @@
+/**
+ * containerTree
+ */
+
+
+.containerTree__branch {
+	$base_size: 88px;
+
+	&:not(.-noPad) {
+		padding-top: $base_size;
+		padding-bottom: $base_size;
+
+		@include mq {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+	}
+
+	&.-size_1 {
+		padding-bottom: 48px;
+
+		&:not(:first-child) {
+			padding-top: 48px;
+		}
+	}
+
+	&:not([class*="-bg"]):not([class*="_bg"]):not(.-noPad) +
+	&:not([class*="-bg"]):not([class*="_bg"]) {
+		padding-top: 0;
+	}
+}

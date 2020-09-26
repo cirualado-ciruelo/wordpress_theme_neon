@@ -1,0 +1,144 @@
+/**
+ * nn_posts
+ */
+
+
+.nn_posts_2__item {
+	border-top: 1px solid #eee;
+
+	&:last-child {
+		border-bottom: 1px solid #eee;
+	}
+
+	> .__inner {
+		position: relative;
+		background-size: cover;
+		padding-top: 24px;
+		padding-bottom: 24px;
+		padding-left: 42px;
+
+		@include before(a1, '') {
+			width: 12px;
+			height: 12px;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			background-image: svg-load('../svg/_arw_left.svg', fill=rgba($color_main_1, .4));
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: auto 100%;
+			margin: auto;
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.nn_posts_2__title {
+	font-size: 16px;
+}
+
+.nn_posts_2__exerpt {
+	color: #666;
+
+	@include line_clamp(14px, 1.8, 2);
+
+	margin-top: 8px;
+}
+
+
+$nn_posts_1_row_margin: 24px;
+
+.nn_posts_1__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: -$nn_posts_1_row_margin;
+	margin-bottom: -$nn_posts_1_row_margin;
+
+	&.-scroll_column {
+		@include mq(MaxL) {
+			flex-wrap: nowrap;
+			padding-left: calc( 50% - ( 342px / 2 ) );
+			margin-right: -$mq_gutter_val;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch !important;
+		}
+
+		@include mq {
+			flex-wrap: wrap;
+			padding-left: 0;
+			overflow: visible;
+			margin-right: 0;
+		}
+	}
+}
+
+.nn_posts_1__item {
+	width: 342px;
+	margin-top: $nn_posts_1_row_margin;
+	margin-bottom: $nn_posts_1_row_margin;
+
+	@include mq(MaxL) {
+		width: calc( ( 100% / 3 ) - 16px );
+	}
+
+	@include mq(MaxM) {
+		width: calc( ( 100% / 2 ) - 16px );
+	}
+
+	@include mq {
+		width: 100%;
+	}
+
+	.nn_posts_1__list.-scroll_column & {
+		@include mq(Max1120) {
+			width: calc( ( 100% / 3 ) - 16px );
+		}
+
+		@include mq(MaxL) {
+			flex-shrink: 0;
+			width: 342px;
+			margin-right: 16px;
+		}
+
+		@include mq {
+			width: 100%;
+			margin-right: 0;
+		}
+	}
+
+	&.-empty {
+		height: 0;
+		margin: 0;
+
+		@include mq(MaxL) {
+			display: none;
+		}
+	}
+}
+
+.nn_posts_1__torso {
+	margin-top: 16px;
+
+	> * {
+		&:not(:first-child) {
+			margin-top: 8px;
+		}
+	}
+}
+
+.nn_posts_1__date {
+	font-size: 12px;
+}
+
+.nn_posts_1__title {
+	@include line_clamp(18, 1.8, 2);
+
+	@include mq(MaxM) {
+		font-size: 16px;
+	}
+}
+
+.nn_posts_1__term {
+	font-size: 14px;
+}

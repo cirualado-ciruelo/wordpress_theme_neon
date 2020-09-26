@@ -1,0 +1,47 @@
+/**
+ * site_header
+ */
+
+
+.site_header {
+	width: 100%;
+	height: $site_header_height;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background-color: lighten($color_main_1, 40%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include mq(MaxL) {
+		height: $site_header_height_sp;
+	}
+
+	body.logged-in & {
+		top: $wp_loginbar_height;
+
+		@media ( max-width: 782px ) {
+			top: $wp_loginbar_height_sp;
+		}
+	}
+}
+
+.site_header__body {
+	width: 100%;
+}
+
+.site_header__group_1 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.site_header__srcLogo {
+	width: 120px;
+
+	@include mq(MaxL) {
+		width: 80px;
+	}
+}

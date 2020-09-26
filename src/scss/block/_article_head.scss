@@ -1,0 +1,12 @@
+/**
+ * article_head
+ */
+
+
+.article_head_1__ladder {
+	> * {
+		&:not(:first-child) {
+			margin-top: 16px;
+		}
+	}
+}

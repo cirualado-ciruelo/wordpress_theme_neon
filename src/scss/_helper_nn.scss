@@ -1,0 +1,41 @@
+/**
+ * helper_nn
+ */
+
+
+._nn_text_anno_1 {
+	font-size: .9em;
+	line-height: 1.4;
+	letter-spacing: .04em;
+	display: flex;
+	align-items: baseline;
+	opacity: .95;
+
+	sup {
+		position: absolute;
+		top: -.9em;
+		left: 1.7em;
+	}
+
+	&:not(:first-child) {
+		margin-top: 16px;
+	}
+
+	@include before(a0, '※');
+
+	&.-sup {
+		&::before {
+			margin-right: 6px;
+		}
+	}
+}
+
+
+._nn_text_1 {
+	line-height: 2.4;
+}
+
+
+._nn_text_2 {
+	line-height: 2.2;
+}

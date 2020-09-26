@@ -38,7 +38,7 @@ function neon_mw_change_form_content( $content ) {
 		$page_id = $post->ID;
 	}
 
-	$page_src_file      = locate_template( 'pages/' . get_field( 'acf_page_system_id', get_page( $page_id, 'page' )->ID ) . '.php' );
+	$page_src_file      = locate_template( 'template-parts/pages/' . get_field( 'acf_page_system_id', get_page( $page_id, 'page' )->ID ) . '.php' );
 	$page_src_line_list = file( $page_src_file );
 	$page_src           = implode( "\n", $page_src_line_list );
 	$page_src           = str_replace( ['<?php', '?>'], ['<!--', '-->'], $page_src );

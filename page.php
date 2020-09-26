@@ -9,7 +9,7 @@
  */
 
 // 固定ページのファイルパス取得
-$page_file = locate_template( 'pages/' . neon_get_data_from_system_page_id( '', 'get' ) . '.php' );
+$page_file = locate_template( 'template-parts/pages/' . neon_get_data_from_system_page_id( '', 'get' ) . '.php' );
 
 // 使用するライブラリのリスト
 $use_library = array();
@@ -53,7 +53,7 @@ else :
 
 	// ソースファイルがある場合
 	if ( $page_file ) :
-		get_template_part( 'pages/' . neon_get_data_from_system_page_id( '', 'get' ) );
+		get_template_part( 'template-parts/pages/' . neon_get_data_from_system_page_id( '', 'get' ) );
 	else :
 
 		?>

@@ -54,7 +54,7 @@ Ladder
 	}
 }
 
-[class*='_ladder'] {
+[class*='_ladder']:not([class*='__']) {
 	> * {
 		&:first-child {
 			margin-top: 0;

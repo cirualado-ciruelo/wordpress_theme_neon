@@ -10,7 +10,6 @@
   const $BODY = $('body');
   const $SITE_HEADER = $('.Header');
   const USER_AGENT = document.documentElement.dataset.ua;
-  const MAIN_CONTENT_WIDTH = 1080;
 
   // alert(innerWidth)
 
@@ -123,8 +122,8 @@
     /*
      * カレンダーフィールドのテキスト再編集防止用
      */
-    if ( $('.wp_MwCalendar')[0] ) {
-      $('.wp_MwCalendar').attr('readonly', true);
+    if ( $('.wp_mwCalendar')[0] ) {
+      $('.wp_mwCalendar').attr('readonly', true);
     }
   }
 
@@ -243,10 +242,10 @@
    * スマホの時、テーブルをスクロール可能にする
    */
   function contentTable() {
-    if ( $('.wp_TheContent table')[0] ) {
-      if ( detect() === 'MaxS' ) {
-        $('.wp_TheContent table').each(function() {
-          $(this).wrap('<div class="_ScrollTable"><div class="_ScrollTable__inner"><div class="_ScrollTable__content"></div></div></div>');
+    if ( $('.wp_theContent table')[0] ) {
+      if ( detect() === 'maxS' ) {
+        $('.wp_theContent table').each(function() {
+          $(this).wrap('<div class="_scrollTable"><div class="_scrollTable__inner"><div class="_scrollTable__content"></div></div></div>');
         });
       }
     }
@@ -287,11 +286,11 @@
     if ( innerWidth > 992 ) {
       return 'full';
     } else if ( innerWidth > 768 ) {
-      return 'MaxL';
+      return 'maxL';
     } else if ( innerWidth > 575 ) {
-      return 'MaxM';
+      return 'maxM';
     } else {
-      return 'MaxS';
+      return 'maxS';
     }
   }
 }(jQuery));

@@ -43,7 +43,7 @@ else :
 
 					?>
 					<p class="_nn_text_1">
-						<a class="_nn_link_left_1"
+						<a class="nn_link_left_1"
 						   href="javascript:history.back();">前のページに戻る</a>
 					</p>
 					<?php
@@ -63,7 +63,7 @@ else :
 
 						?>
 						<p class="_nn_text_1">
-							<a class="_nn_link_left_1"
+							<a class="nn_link_left_1"
 							   href="<?php echo esc_url( home_url() ); ?>">トップページへ戻る</a>
 						</p>
 						<?php

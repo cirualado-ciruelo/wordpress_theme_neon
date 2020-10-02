@@ -3,6 +3,28 @@
  */
 
 
+.nn_wp_archivePager_1 {
+	a.page-numbers {
+		@include hover() {
+			transition: opacity 200ms,
+			            background-color 200ms;
+
+			&:hover,
+			&:focus
+			{
+				@extend %opacity_08;
+
+				&.prev,
+				&.next
+				{
+					background-color: lighten($color_main_2, 40%);
+				}
+			}
+		}
+	}
+}
+
+
 .nn_posts_2__item {
 	transition: background-color 200ms;
 

@@ -59,21 +59,21 @@
 
 						?>
 				</article><!-- /.containerTree -->
-			</main><!-- /.PrimaryContainer__torso -->
+			</main><!-- /.primaryContainer__torso -->
 			<?php
 
 					// ! neon_is_sidebar()
 					endif;
 
 	?>
-	</div><!-- /.PrimaryContainer__body -->
+	</div><!-- /.primaryContainer__body -->
 
 	<button class="button_ageTop"
 	        type="button"
 	        title="ページのトップへ戻る"
 	        data-click="scrolToPageTop"
 	        data-scroll="anyTimingToggle"></button>
-</div><!-- /.PrimaryContainer -->
+</div><!-- /.primaryContainer -->
 
 <footer class="site_footer">
 	<div class="site_footer__ladder _container">

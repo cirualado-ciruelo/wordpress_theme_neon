@@ -123,7 +123,7 @@ wp_body_open();
 					</<?php echo $header_logo_tag; ?>>
 				</div><!-- /.site_header__group_2 -->
 				<div class="site_header__group_3">
-					<nav class="Globalnav _minL_block">
+					<nav class="globalnav _minL_block">
 						<?php
 
 						neon_the_menu( 'global' );

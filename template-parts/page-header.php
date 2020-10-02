@@ -6,6 +6,9 @@
  * @since 1.0.0
  */
 
+// ブログの英語タイトルをユニークにしたい場合
+// $page_name = "blog" === neon_the_post_data( 'name' ) ? "News &amp; Topics" : neon_the_post_data( 'name' );
+
 if ( ! is_front_page() ) :
 	$page_header_image_src = get_template_directory() . '/assets/images/pageHeader_';
 	$page_header_title_ja  = get_the_title();
@@ -18,7 +21,7 @@ if ( ! is_front_page() ) :
 
 	if ( 'post' === neon_get_current_post_type() ) {
 		$page_header_title_ja = get_post( get_option( 'page_for_posts' ) )->post_title;
-		$page_header_title_en = get_post( get_option( 'page_for_posts' ) )->post_name;
+		$page_header_title_en = $page_name;
 	}
 
 	if ( is_404() ) {

@@ -25,7 +25,7 @@
 									<li class="nn_banner_1__item">
 										<a class="__inner _block"
 										   target="_blank"
-										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
+										   href="<?php echo neon_config( 'menu' )['anime_shirobako']['link']; ?>">
 											<img class="__src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_1.jpg"
 											     alt="">
@@ -34,7 +34,7 @@
 									<li class="nn_banner_1__item">
 										<a class="__inner _block"
 										   target="_blank"
-										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
+										   href="<?php echo neon_config( 'menu' )['anime_shirobako']['link']; ?>">
 											<img class="__src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_2.jpg"
 											     alt="">
@@ -43,7 +43,7 @@
 									<li class="nn_banner_1__item">
 										<a class="__inner _block"
 										   target="_blank"
-										   href="<?php echo neon_link( 'anime_shirobako' ); ?>">
+										   href="<?php echo neon_config( 'menu' )['anime_shirobako']['link']; ?>">
 											<img class="__src"
 											     src="<?php echo THEME_IMG_URL; ?>/banners_3.jpg"
 											     alt="">
@@ -122,7 +122,9 @@
 <?php
 
 // HTML圧縮End（出力）
-// neon_the_ob_replace();
+if ( neon_is_content_compressed() ) {
+	neon_the_ob_replace();
+}
 
 ?>
 <script>

@@ -30,15 +30,17 @@ if ( ! is_front_page() ) :
 		$page_header_image_src .= '404';
 	}
 
-	if ( is_archive() ) {
-		$page_header_title_ja = neon_the_post_data( 'label' );
-		$page_header_title_en = neon_the_post_data( 'name' );
+	if ( is_archive() || is_home() || is_category() || is_tag() ) {
+		$page_header_title_ja   = neon_the_post_data( 'label' );
+		$page_header_title_en   = neon_the_post_data( 'name' );
+		$page_header_image_src .= $page_header_title_en;
 	}
 
 	if ( is_single() ) {
-		$page_header_title_ja  = neon_the_post_data( 'label' );
-		$page_header_title_en  = neon_the_post_data( 'name' );
-		$page_header_title_tag = 'h2';
+		$page_header_title_ja   = neon_the_post_data( 'label' );
+		$page_header_title_en   = neon_the_post_data( 'name' );
+		$page_header_title_tag  = 'h2';
+		$page_header_image_src .= $page_header_title_en;
 	}
 
 	if ( is_search() && 'any' === $wp_query->query_vars['post_type'] ) {
@@ -53,7 +55,7 @@ if ( ! is_front_page() ) :
 		$page_header_title_tag = 'h2';
 	}
 
-	$page_header_image_src .= '_.jpg';
+	$page_header_image_src .= '.jpg';
 
 	if ( file_exists( $page_header_image_src ) ) {
 		$page_header_image_src = str_replace(
@@ -77,7 +79,7 @@ if ( ! is_front_page() ) :
 						</<?php echo $page_header_title_tag; ?>>
 
 						<small class="pageHeader__subTitle">
-							<?php echo ucwords( $page_header_title_en ); ?>
+							<?php echo ucwords( str_replace( '_', ' ', $page_header_title_en ) ); ?>
 						</small>
 					</div><!-- /.pageHeader__title -->
 				</div><!-- /.pageHeader__group_1 -->

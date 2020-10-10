@@ -38,7 +38,7 @@ get_header();
 
 			<p class="_ladder__link _tac">
 				<a class="nn_link_right_1"
-				   href="<?php echo neon_link( 'about' ); ?>">詳しく見る</a>
+				   href="<?php echo neon_config( 'menu' )['about']['link']; ?>">詳しく見る</a>
 			</p>
 		</div><!-- /._ladder -->
 	</div><!-- /._container -->
@@ -67,7 +67,7 @@ get_header();
 				?>
 				<p class="_ladder__link _tac">
 					<a class="nn_link_right_1"
-					   href="<?php echo neon_link( 'blog' ); ?>">詳しく見る</a>
+					   href="<?php echo neon_config( 'menu' )['blog']['link']; ?>">詳しく見る</a>
 				</p><!-- /._ladder__link -->
 				<?php
 
@@ -99,8 +99,8 @@ get_header();
 
 			<p class="_ladder__link _tac">
 				<a class="nn_link_plane_1"
-				   href="<?php echo neon_link( 'contact' ); ?>">
-					<?php echo neon_link( 'contact', 'label' ); ?>
+				   href="<?php echo neon_config( 'menu' )['contact']['link']; ?>">
+					<?php echo neon_config( 'menu' )['contact']['label']; ?>
 				</a>
 			</p>
 		</div><!-- /._ladder -->

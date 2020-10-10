@@ -856,10 +856,12 @@ function neon_the_time_tag( $class = null, $type = null ) {
  * @param string  $class2  2つ目に使用したいクラス（親要素にのみ付与される）.
  * @return string 指定したタクソノミーのリストHTML.
  */
-function neon_the_has_term_list( $tax = null, $class = null, $wrapper = null, $link = null, $class2 = null ) {
+function neon_the_has_term_list( $tax = null, $class = null, $wrapper = null, $link = null, $class2 = null, $num = null ) {
 	$the_terms = get_the_terms( $post->ID, $tax );
 
 	if ( $the_terms && ! $the_terms->errors ) {
+		$term_count = 1;
+
 		foreach ( $the_terms as $term_data ) {
 			if ( 1 !== $term_data->term_id ) {
 				if ( $link ) {
@@ -882,9 +884,15 @@ function neon_the_has_term_list( $tax = null, $class = null, $wrapper = null, $l
 						. $term_data->name
 					. '</' . $set_tag_end . '>
 				</li>';
+
+				if ( $num && $num === $term_count ) {
+					break;
+				}
 			} else {
 				$is_default_term = 1;
 			}
+
+			$term_count++;
 		}
 
 		if ( ! $is_default_term ) {

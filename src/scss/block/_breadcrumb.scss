@@ -67,10 +67,10 @@
 	}
 }
 
-.breadcrumb__link {
-	color: $color_main_1;
+.breadcrumb__body {
 
 	&[href] {
+		color: $color_main_1;
 		text-decoration: underline;
 	}
 }

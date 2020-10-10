@@ -104,7 +104,9 @@ wp_body_open();
 <?php
 
 // HTML圧縮Start
-// ob_start();
+if ( neon_is_content_compressed() ) {
+	ob_start();
+}
 
 ?>
 <header class="site_header">

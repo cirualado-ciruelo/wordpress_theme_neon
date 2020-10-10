@@ -10,10 +10,12 @@ Ladder
 
 ._ladder {
 	> * {
-		margin-top: 32px;
+		&:not(:first-child) {
+			margin-top: 32px;
 
-		@include mq {
-			margin-top: 24px;
+			@include mq {
+				margin-top: 24px;
+			}
 		}
 	}
 
@@ -23,52 +25,73 @@ Ladder
 
 	&.-gapSize_XS {
 		> * {
-			margin-top: 8px;
+			&:not(:first-child) {
+				margin-top: 8px;
+			}
 		}
 	}
 
 	&.-gapSize_S {
 		> * {
-			margin-top: 16px;
+			&:not(:first-child) {
+				margin-top: 16px;
+			}
 		}
 	}
 
 	&.-gapSize_L {
 		> * {
-			margin-top: 56px;
+			&:not(:first-child) {
+				margin-top: 56px;
 
-			@include mq {
-				margin-top: 32px;
+				@include mq {
+					margin-top: 32px;
+				}
 			}
 		}
 	}
 
 	&.-gapSize_XL {
 		> * {
-			margin-top: 74px;
+			&:not(:first-child) {
+				margin-top: 74px;
 
-			@include mq {
-				margin-top: 56px;
+				@include mq {
+					margin-top: 56px;
+				}
 			}
 		}
 	}
-}
 
-[class*='_ladder']:not([class*='__']) {
-	> * {
-		&:first-child {
-			margin-top: 0;
+	._ladder__link,
+	._ladder__pager
+	{
+		margin-top: 56px;
+
+		@include mq {
+			margin-top: 40px;
 		}
 	}
 }
 
-._ladder__link,
-._ladder__pager
-{
-	margin-top: 56px;
 
-	@include mq {
-		margin-top: 40px;
+/*
+Text Anno
+*/
+
+
+._text_anno_1 {
+	line-height: 1.6;
+	letter-spacing: .04em;
+	display: flex;
+	align-items: baseline;
+
+	&._tac {
+		justify-content: center;
+	}
+
+	&::before {
+		content: '※';
 	}
 }
 
@@ -79,27 +102,6 @@ Text
 
 
 ._text_1 {}
-
-
-/*
-List
-*/
-
-
-._list_inherit,
-._list_inherit__item
-{
-	color: inherit;
-	font: inherit;
-	letter-spacing: inherit;
-	line-height: inherit;
-}
-
-._list_inherit__item {
-	& + & {
-		margin-top: 10px;
-	}
-}
 
 
 /*

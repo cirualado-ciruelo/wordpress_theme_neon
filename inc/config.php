@@ -7,85 +7,71 @@
  */
 
 /**
- * リンクの設定
- *
- * @param string $dir  ディレクトリ名
- * @param string $type [label, url]
- * @since 1.0.0
- */
-function neon_link( $dir, $type = null ) {
-	$args = array(
-
-		// page
-		'about' => array(
-			'label' => "私達について",
-			'url'   => neon_get_data_from_system_page_id( 'p1', 'link' ),
-		),
-		'company' => array(
-			'label' => "会社概要",
-			'url'   => neon_get_data_from_system_page_id( 'p2', 'link' ),
-		),
-		'privacy' => array(
-			'label' => "プライバシーポリシー",
-			'url'   => neon_get_data_from_system_page_id( 'p9', 'link' ),
-		),
-
-		// form
-		'contact' => array(
-			'label' => "お問い合わせ",
-			'url'   => neon_get_data_from_system_page_id( 'f1', 'link' ),
-		),
-
-		// post
-		'blog' => array(
-			'label' => "ブログ",
-			'url'   => get_post_type_archive_link( 'post' ),
-		),
-		'staff' => array(
-			'label' => "スタッフ",
-			'url'   => get_post_type_archive_link( 'staff' ),
-		),
-		'information' => array(
-			'label' => "お知らせ",
-			'url'   => get_post_type_archive_link( 'information' ),
-		),
-
-		// taxonomy
-		'blog_c_voice' => array(
-			'label' => "お客様の声",
-			'url'   => '',
-		),
-
-		// _blank
-		'facebook' => array(
-			'label' => "facebook",
-			'url'   => ''
-		),
-		'instagram' => array(
-			'label' => "instagram",
-			'url'   => ''
-		),
-		'anime_shirobako' => array(
-			'label' => "ラベル",
-			'url'   => 'http://shirobako-anime.com/index.html',
-		),
-	);
-
-	if ( 'label' === $type ) {
-		return $args[ $dir ]['label'];
-	} else {
-		return esc_url( $args[ $dir ]['url'] );
-	}
-}
-
-/**
  * 各種設定
  *
  * @param string $key
  * @since 1.0.0
  */
 function neon_config( $key ) {
+	$menu = array(
+
+		// page
+		'about' => array(
+			'label' => "私達について",
+			'link'   => neon_get_data_from_system_page_id( 'p1', 'link' ),
+		),
+		'company' => array(
+			'label' => "会社概要",
+			'link'   => neon_get_data_from_system_page_id( 'p2', 'link' ),
+		),
+		'privacy' => array(
+			'label' => "プライバシーポリシー",
+			'link'   => neon_get_data_from_system_page_id( 'p9', 'link' ),
+		),
+
+		// form
+		'contact' => array(
+			'label' => "お問い合わせ",
+			'link'   => neon_get_data_from_system_page_id( 'f1', 'link' ),
+		),
+
+		// post
+		'blog' => array(
+			'label' => "ブログ",
+			'link'   => get_post_type_archive_link( 'post' ),
+		),
+		'staff' => array(
+			'label' => "スタッフ",
+			'link'   => get_post_type_archive_link( 'staff' ),
+		),
+		'information' => array(
+			'label' => "お知らせ",
+			'link'   => get_post_type_archive_link( 'information' ),
+		),
+
+		// taxonomy
+		'blog_c_voice' => array(
+			'label' => "お客様の声",
+			'link'   => '',
+		),
+
+		// _blank
+		'facebook' => array(
+			'label' => "facebook",
+			'link'   => ''
+		),
+		'instagram' => array(
+			'label' => "instagram",
+			'link'   => ''
+		),
+		'anime_shirobako' => array(
+			'label' => "ラベル",
+			'link'   => 'http://shirobako-anime.com/index.html',
+		),
+	);
+
 	$args = array(
+		'menu' => $menu,
 		'info_mail_address' => "info@example.com",
 		'debug_mail_address' => "cirualado.ciruelo@gmail.com",
 	);
@@ -295,6 +281,15 @@ function neon_is_sidebar() {
 	$return = 'blog' === neon_the_post_data( 'name' );
 
 	return $return;
+}
+
+/**
+ * コンテンツのHTMLを圧縮するかどうか
+ *
+ * @since 1.0.0
+ */
+function neon_is_content_compressed() {
+	return true;
 }
 
 /**

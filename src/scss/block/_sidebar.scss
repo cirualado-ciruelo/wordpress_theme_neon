@@ -64,6 +64,7 @@
 	}
 
 	&:nth-child(1n) {
+
 		@include mq(maxL) {
 			margin: 24px;
 		}
@@ -74,6 +75,7 @@
 	}
 
 	&:not(:first-child) {
+
 		@include mq {
 			margin-top: 40px;
 		}

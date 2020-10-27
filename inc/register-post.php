@@ -142,7 +142,7 @@ function custom_post_init() {
 	);
 }
 
-add_action( 'init', 'custom_post_init' );
+// add_action( 'init', 'custom_post_init' );
 
 /**
  * 新規投稿時のタイトルプレースホルダー変更

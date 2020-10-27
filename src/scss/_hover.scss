@@ -4,6 +4,7 @@
 
 
 .button_pageTop {
+
 	@include hover() {
 		@extend %opacity_08;
 	}
@@ -69,8 +70,9 @@ Disable underline
 
 
 .term_2__item > a.__inner,
-a.breadcrumb__link
+a.breadcrumb__body
 {
+
 	@include hover() {
 		@extend %text_decoration_none;
 		@extend %opacity_08;

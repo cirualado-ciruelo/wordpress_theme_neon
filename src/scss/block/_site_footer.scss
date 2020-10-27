@@ -10,7 +10,9 @@
 }
 
 .site_footer__ladder {
+
 	> * {
+
 		&:not(:first-child) {
 			margin-top: 40px;
 		}
@@ -27,6 +29,7 @@
 }
 
 .site_footer__logo {
+
 	> .__src {
 		width: 120px;
 	}

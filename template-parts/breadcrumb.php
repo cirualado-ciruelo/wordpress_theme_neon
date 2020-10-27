@@ -137,7 +137,5 @@ if ( $_GET['s'] ) {
 
 			?>
 		</ol>
-	</div>
-	<!-- /._Container -->
-</div>
-<!-- /.breadcrumb -->
+	</div><!-- /._container -->
+</div><!-- /.breadcrumb -->

@@ -4,6 +4,7 @@
 
 
 .nn_form_parts_radio_1 {
+
 	> .__inner {
 		margin-top: -.7em;
 
@@ -62,8 +63,11 @@
 }
 
 .nn_form_parts_radio_1__input {
+
 	&:checked {
+
 		+ span {
+
 			&::before {
 				border-color:  map-get($color_template, 'green_1');
 			}

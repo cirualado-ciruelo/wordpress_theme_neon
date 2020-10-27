@@ -13,64 +13,83 @@
  * @since 1.0.0
  */
 function neon_config( $key ) {
+	$page_simple_data = array();
+
+	foreach ( get_posts( 'post_type=page&posts_per_page=-1' ) as $page_data ) {
+		$system_page_id = get_field( 'acf_page_system_id', $page_data->ID );
+
+		if ( $system_page_id ) {
+			if ( get_post_ancestors( $page_data->ID ) ) {
+				$post_name = '';
+
+				foreach ( array_reverse( get_post_ancestors( $page_data->ID ) ) as $post_parent_id ) {
+					$post_name .= get_post( $post_parent_id )->post_name . '_' . $page_data->post_name;
+				}
+			} else {
+				$post_name = $page_data->post_name;
+			}
+
+			$page_simple_data[ $post_name ] = array(
+				'label' => array(
+					'ja' => get_the_title( $page_data->ID ),
+					'en' => $post_name,
+				),
+				'link' => get_the_permalink( $page_data->ID ),
+				'pid' => $system_page_id,
+			);
+		}
+	}
+
 	$menu = array(
 
 		// page
-		'about' => array(
-			'label' => "私達について",
-			'link'   => neon_get_data_from_system_page_id( 'p1', 'link' ),
-		),
-		'company' => array(
-			'label' => "会社概要",
-			'link'   => neon_get_data_from_system_page_id( 'p2', 'link' ),
-		),
-		'privacy' => array(
-			'label' => "プライバシーポリシー",
-			'link'   => neon_get_data_from_system_page_id( 'p9', 'link' ),
-		),
-
-		// form
-		'contact' => array(
-			'label' => "お問い合わせ",
-			'link'   => neon_get_data_from_system_page_id( 'f1', 'link' ),
+		'access' => array(
+			'label' => array(
+				'ja' => "アクセスマップ",
+				'en' => "access",
+			),
+			'link'  => neon_get_data_from_system_page_id( 'p1', 'link' ) . '#access',
 		),
 
 		// post
-		'blog' => array(
-			'label' => "ブログ",
-			'link'   => get_post_type_archive_link( 'post' ),
-		),
-		'staff' => array(
-			'label' => "スタッフ",
-			'link'   => get_post_type_archive_link( 'staff' ),
-		),
 		'information' => array(
-			'label' => "お知らせ",
-			'link'   => get_post_type_archive_link( 'information' ),
+			'label' => array(
+				'ja' => "お知らせ",
+				'en' => "news",
+			),
+			'link'  => get_post_type_archive_link( 'post' ),
 		),
 
 		// taxonomy
 		'blog_c_voice' => array(
-			'label' => "お客様の声",
-			'link'   => '',
+			'label' => array(
+				'ja' => "お客様の声",
+				'en' => "voice",
+			),
+			'link'  => '',
 		),
 
 		// _blank
 		'facebook' => array(
 			'label' => "facebook",
-			'link'   => ''
+			'link'  => ''
 		),
 		'instagram' => array(
 			'label' => "instagram",
-			'link'   => ''
-		),
-		'anime_shirobako' => array(
-			'label' => "ラベル",
-			'link'   => 'http://shirobako-anime.com/index.html',
+			'link'  => ''
 		),
 	);
 
+	$menu = array_merge( $menu, $page_simple_data );
+
+	$global_menu = array(
+		$menu['about'],
+		$menu['contact'],
+		$menu['access'],
+	);
+
 	$args = array(
+		'global_menu' => $global_menu,
 		'menu' => $menu,
 		'info_mail_address' => "info@example.com",
 		'debug_mail_address' => "cirualado.ciruelo@gmail.com",
@@ -90,22 +109,14 @@ function neon_wp_head() {
 	$time_stamp = time();
 
 	// style
-	if ( $use_library['is_swiper'] ) {
-		wp_enqueue_style( 'swiper', THEME_CSS_URL . '/swiper.min.css', '', $time_stamp );
-	}
-
-	// wp_enqueue_style( 'gfonts', '//fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&amp;display=swap', '' );
+	wp_enqueue_style( 'lib', THEME_LIB_URL . '/lib.css', '', $time_stamp );
+	// wp_enqueue_style( 'gfonts', '//fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&amp;display=swap', array(), null );
 	wp_enqueue_style( 'main', THEME_CSS_URL . '/main.css', '', $time_stamp );
 
 	// script
 	// WP default jQury
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'ofi', THEME_JS_URL . '/ofi.min.js', '', '1.0' );
-
-	if ( $use_library['is_swiper'] ) {
-		wp_enqueue_script( 'swiper', THEME_JS_URL . '/swiper.min.js', '', '1.0' );
-	}
-
+	wp_enqueue_script( 'lib', THEME_LIB_URL . '/lib.js', '', $time_stamp );
 	wp_enqueue_script( 'main', THEME_JS_URL . '/main.js', '', $time_stamp, true );
 
 	// ブロックコンテンツエディタのCSSを無効化

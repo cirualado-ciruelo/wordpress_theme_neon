@@ -1,3 +1,40 @@
+//
+// mixin
+//
+
+
+////
+/// 箇条書きリストのテンプレート
+@mixin list_plane {
+	padding-left: 2em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	@include mq {
+		padding-left: 1.5em;
+	}
+
+	& + & {
+		margin-top: .5em;
+		margin-bottom: .5em;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:first-child:last-child {
+		padding-left: 1em;
+	}
+
+	li {
+		+ li {
+			margin-top: .5em;
+		}
+	}
+}
+
+
 ////
 /// スマホ・タブレットの時の左右の余白
 @mixin mq_gutter() {

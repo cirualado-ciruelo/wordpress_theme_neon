@@ -147,7 +147,7 @@ if ( neon_is_content_compressed() ) {
 	     data-action="hamburgerMenu">
 		<?php
 
-		neon_the_menu( 'hamburger' );
+		// neon_the_menu( 'hamburger' );
 
 		/**
 		 * ソーシャルリンク.

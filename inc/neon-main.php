@@ -634,6 +634,21 @@ function neon_get_img_data( $type = null, $size = null, $noimg = null, $num = nu
  */
 
 /**
+ * フロントページかどうか
+ *
+ * @since 1.0.0
+ */
+function neon_is_front_page() {
+	global $post;
+
+	if ( get_option( 'show_on_front' ) && $post->ID === (int)get_option( 'page_on_front' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
  * 公開されているかどうか
  *
  * @since 1.0.0

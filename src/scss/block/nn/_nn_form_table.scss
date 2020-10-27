@@ -4,6 +4,7 @@
 
 
 .nn_form_table_1 {
+
 	> .__inner {
 		margin: -1em;
 
@@ -139,6 +140,7 @@
 	}
 
 	> * {
+
 		&:not(:last-child) {
 			margin-right: 1em;
 		}
@@ -154,19 +156,23 @@
 }
 
 .nn_form_table_1__item {
+
 	&.-size_1 {
 		width: 160px;
 	}
 }
 
 .nn_form_table_1__toggle {
+
 	&.-hiddenError {
+
 		body.form_error & {
 			display: none;
 		}
 	}
 
 	&.-hiddenConfirm {
+
 		body[class*='confirm'] & {
 			display: none;
 		}

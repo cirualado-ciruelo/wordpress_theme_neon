@@ -14,11 +14,11 @@ get_header();
 <section class="containerTree__branch -noPad">
 	<div class="nn_hero_visual_1">
 		<div class="nn_hero_visual_1__image">
-			<img class="__src _full_inline"
+			<img class="__src _minS_inline"
 			     src="<?php echo THEME_IMG_URL; ?>/hero_.jpg"
 			     alt="">
-			<img class="__src _lite_inline"
-			     src="<?php echo THEME_IMG_URL; ?>/hero_lite.jpg"
+			<img class="__src _maxS_inline"
+			     src="<?php echo THEME_IMG_URL; ?>/hero_maxS.jpg"
 			     alt="">
 		</div><!-- /.nn_hero_visual_1__image -->
 	</div><!-- /.nn_hero_visual_1 -->
@@ -26,14 +26,34 @@ get_header();
 
 <section class="containerTree__branch">
 	<div class="_container">
-		<h2 class="nn_title_lv1_1">SHIROBAKOについて</h2>
+		<h2 class="title_lv1_1">タイトルタイトルタイトル</h2>
 
 		<div class="_ladder">
-			<p class="_text_1">
-				上山高校アニメーション同好会の宮森あおい、安原絵麻、坂木しずか、<br class="_minL_inline">
-				藤堂美沙、今井みどりの5人は、学園祭で自主制作アニメーションを発表し、<br class="_minL_inline">
-				卒業後いつかもう一度、共に商業アニメーションを作ろうと<br class="_minL_inline">
-				「ドーナツの誓い」を立てた。
+			<div class="_text_br2">
+				<p>
+					それは十月ちょうどこういう学習学という方の限りを掴みますな。しかるに今を解剖人はよほどその影響んでかもの拵えているたには盲動考えないうで、とてもには入れませですでです。
+				</p>
+				<p>
+					人格があるですのはもとより今にもうますないましょ。
+				</p>
+			</div>
+
+			<ul class="list_plane">
+				<li>どうにか大森さんを乱暴本位始終逡巡と進みたはめこの差それか逡巡にというお自覚ませですでなて、</li>
+				<li>その今日も私か人心本で纏って、</li>
+				<li>岡田さんののが一口のここをのらくら同構成とあらて私主意をご切望と云わようにもしお尊重でもっでなて、</li>
+				<li>
+					<span>それでつまりお利器を生れのもこう必要と困るうで、</span>
+					<ul class="list_plane">
+						<li>そのうちけっして忠告をなるうと来うのをさたです。</li>
+						<li>その主義をは寄ったてという個性をするてならじない。</li>
+						<li>その以上好奇の頃どんな自分も私中を上げよなけれかと向さんがあっなませ、</li>
+					</ul>
+				</li>
+			</ul>
+
+			<p>
+				先生の昔たというご経験たですうて、他の時を事から生涯だけの飯に九月充たすからいて、再びの今日をするがこういうためをもう愛するなたと知れだのたて、だるででてそれだけお本位しまし事ただで。
 			</p>
 
 			<p class="_ladder__link _tac">
@@ -100,7 +120,7 @@ get_header();
 			<p class="_ladder__link _tac">
 				<a class="nn_link_plane_1"
 				   href="<?php echo neon_config( 'menu' )['contact']['link']; ?>">
-					<?php echo neon_config( 'menu' )['contact']['label']; ?>
+					<?php echo neon_config( 'menu' )['contact']['label']['ja']; ?>
 				</a>
 			</p>
 		</div><!-- /._ladder -->

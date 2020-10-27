@@ -6,6 +6,13 @@
 
 
 .wp_theContent {
+
+	ul,
+	ol
+	{
+		@include list_plane;
+	}
+
 	p,
 	li,
 	th,
@@ -22,6 +29,7 @@
 	}
 
 	a {
+
 		&:not(.wp-block-button__link):not(.wp-block-file__button) {
 			color: $color_main_1;
 			text-decoration: underline;
@@ -189,7 +197,9 @@
 		@include wp_gutenburg_base_space;
 
 		&.is-image-fill {
+
 			figure {
+
 				@include mq {
 					height: 0;
 					min-height: 0;
@@ -200,8 +210,11 @@
 	}
 
 	.wp-block-media-text {
+
 		&:not(.has-media-on-the-right) {
+
 			.wp-block-media-text__content {
+
 				@include mq {
 					margin-top: 10px;
 				}
@@ -209,7 +222,9 @@
 		}
 
 		&.has-media-on-the-right {
+
 			.wp-block-media-text__content {
+
 				@include mq {
 					margin-bottom: 10px;
 				}
@@ -236,18 +251,21 @@
 		}
 
 		&:nth-child(2n+1) {
+
 			@media ( max-width: 781px ) and ( min-width: 600px ) {
 				margin-left: 0;
 			}
 		}
 
 		&:not(:nth-child(-n+2)) {
+
 			@media ( max-width: 781px ) and ( min-width: 600px ) {
 				margin-top: 30px;
 			}
 		}
 
 		.wp-block-image {
+
 			&:not(:first-child) {
 				margin-top: 20px;
 
@@ -265,12 +283,14 @@
 	.wp-block-cover,
 	.wp-block-cover-image
 	{
+
 		@include mq {
 			min-height: 58vw;
 		}
 	}
 
 	.wp-block-cover__inner-container {
+
 		> * {
 			line-height: 1.4;
 			margin-top: 0;
@@ -343,9 +363,10 @@
 	}
 
 	.wp-block-file {
+		@include wp_gutenburg_base_space;
+
 		margin: -5px;
 
-		@include wp_gutenburg_base_space;
 
 		a {
 			margin: 5px;
@@ -358,7 +379,9 @@
 	}
 
 	.wp-block-table {
+
 		&.is-style-regular {
+
 			th,
 			td
 			{
@@ -370,6 +393,7 @@
 			}
 
 			thead {
+
 				th,
 				td
 				{
@@ -378,6 +402,7 @@
 			}
 
 			tbody {
+
 				th,
 				td
 				{
@@ -386,6 +411,7 @@
 			}
 
 			tfoot {
+
 				th,
 				td
 				{
@@ -396,6 +422,7 @@
 		}
 
 		&.is-style-stripes {
+
 			th,
 			td
 			{
@@ -407,6 +434,7 @@
 			}
 
 			thead {
+
 				th,
 				td
 				{
@@ -416,6 +444,7 @@
 			}
 
 			tbody {
+
 				th,
 				td
 				{
@@ -424,6 +453,7 @@
 			}
 
 			tfoot {
+
 				th,
 				td
 				{
@@ -478,7 +508,9 @@
 	}
 
 	.fb-post {
+
 		> span {
+
 			@include mq {
 				width: 100% !important;
 			}

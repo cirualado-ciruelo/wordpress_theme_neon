@@ -4,7 +4,9 @@
 
 
 .nn_wp_archivePager_1 {
+
 	a.page-numbers {
+
 		@include hover() {
 			transition: opacity 200ms,
 			            background-color 200ms;
@@ -43,8 +45,26 @@
 }
 
 .nn_article_navigation_1__item.-back > a.__inner {
+
 	@include hover() {
 		@extend %text_decoration_none;
+	}
+}
+
+
+a.nn_link_right_1 {
+	transition: opacity 200ms;
+
+	&::before {
+		transition: transform 200ms;
+	}
+
+	@include hover() {
+		@extend %opacity_08;
+
+		&::before {
+			transform: translateX(2px);
+		}
 	}
 }
 
@@ -67,6 +87,7 @@ a.nn_link_left_1 {
 
 
 .nn_button_toggle_1:not([disabled]) {
+
 	@include hover() {
 		border: 2px solid $color_main_1;
 		outline: none !important;
@@ -86,7 +107,9 @@ Form parts
 
 
 .nn_form_parts_select_1__select:not([disabled]) {
+
 	+ .nn_form_parts_select_1__appearance {
+
 		&::before {
 			transition: background-image 300ms ease-in-out,
 			            transform 300ms ease-in-out;
@@ -115,6 +138,7 @@ Form parts
 
 
 .nn_form_parts_text_2:not([disabled]) {
+
 	@include hover() {
 		outline-color: $color_main_1;
 		border-width: 0 !important;
@@ -125,11 +149,13 @@ Form parts
 .nn_form_parts_check_1__input:not([disabled]),
 .nn_form_parts_radio_1__input:not([disabled])
 {
+
 	+ span {
 		transition: color 200ms;
 	}
 
 	@include hover() {
+
 		+ span {
 			color: map-get($color_template, 'green_1');
 		}
@@ -139,6 +165,7 @@ Form parts
 
 .nn_form_parts_check_1 label
 {
+
 	span {
 		&::after {
 			transition: opacity 200ms,
@@ -147,7 +174,9 @@ Form parts
 	}
 
 	@include hover() {
+
 		span {
+
 			&::after {
 				opacity: .5;
 				transform: scale(.2);
@@ -159,6 +188,7 @@ Form parts
 
 .nn_form_parts_radio_1 label
 {
+
 	span {
 		&::after {
 			transition: opacity 200ms,
@@ -167,6 +197,7 @@ Form parts
 	}
 
 	@include hover() {
+
 		span {
 			&::after {
 				opacity: .5;
@@ -181,6 +212,7 @@ Form parts
 .nn_form_parts_text_2:not([disabled]),
 .nn_form_parts_text_1:not([disabled])
 {
+
 	@include hover() {
 		box-shadow: inset 0 0 0 2px $color_main_1;
 		border-width: 0 !important;
@@ -190,7 +222,9 @@ Form parts
 
 
 .nn_form_parts_submit_1:not([disabled]) {
+
 	@include hover() {
+
 		&.-back {
 			color: $color_base;
 			text-decoration: none;
@@ -206,12 +240,14 @@ Zoom image
 
 .nn_posts_1__item > a.__inner
 {
+
 	img {
 		transition: opacity 300ms ease-in-out,
 		            transform 250ms ease-in-out;
 	}
 
 	@include hover() {
+
 		img {
 			@extend %zoom_image;
 		}

@@ -9,7 +9,9 @@ Ladder
 
 
 ._ladder {
+
 	> * {
+
 		&:not(:first-child) {
 			margin-top: 32px;
 
@@ -24,7 +26,9 @@ Ladder
 	}
 
 	&.-gapSize_XS {
+
 		> * {
+
 			&:not(:first-child) {
 				margin-top: 8px;
 			}
@@ -32,7 +36,9 @@ Ladder
 	}
 
 	&.-gapSize_S {
+
 		> * {
+
 			&:not(:first-child) {
 				margin-top: 16px;
 			}
@@ -40,7 +46,9 @@ Ladder
 	}
 
 	&.-gapSize_L {
+
 		> * {
+
 			&:not(:first-child) {
 				margin-top: 56px;
 
@@ -52,7 +60,9 @@ Ladder
 	}
 
 	&.-gapSize_XL {
+
 		> * {
+
 			&:not(:first-child) {
 				margin-top: 74px;
 
@@ -102,6 +112,17 @@ Text
 
 
 ._text_1 {}
+
+
+._text_br2 {
+
+	> * {
+
+		&:not(:first-child) {
+			margin-top: .61em;
+		}
+	}
+}
 
 
 /*
@@ -440,6 +461,7 @@ General parts
 }
 
 ._scrollTable__inner {
+
 	@include mq {
 		width: calc( 100% + 20px );
 		overflow: auto;
@@ -448,6 +470,7 @@ General parts
 }
 
 ._scrollTable__content {
+
 	@include mq {
 		display: flex;
 		width: 800px;
@@ -473,6 +496,11 @@ General parts
 
 ._tar {
 	text-align: right !important;
+}
+
+
+._ttu {
+	text-transform: uppercase !important;
 }
 
 
@@ -545,6 +573,7 @@ Form sanitize
 	appearance: none;
 
 	&::-webkit-input-placeholder {
+
 		@include mq(maxM) {
 			padding-top: .15em;
 		}
